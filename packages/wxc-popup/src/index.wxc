@@ -30,6 +30,9 @@ export default {
   data: {
     maskStatus: 'hide'
   },
+  ready() {
+    this.properties.status === 'show' && this.showMask()
+  },
   methods: {
     showMask() {
       this.setData({
