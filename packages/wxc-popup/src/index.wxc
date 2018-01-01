@@ -28,7 +28,10 @@ export default {
     }
   },
   data: {
-    maskStatus: this.status
+    maskStatus: 'hide'
+  },
+  ready() {
+    this.properties.status === 'show' && this.showMask()
   },
   methods: {
     showMask() {
