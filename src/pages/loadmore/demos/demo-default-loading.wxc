@@ -1,5 +1,5 @@
 <template>
-  <wxc-loadmore></wxc-loadmore>
+  <wxc-loadmore icon="{{true}}"></wxc-loadmore>
 </template>
 
 <script>
