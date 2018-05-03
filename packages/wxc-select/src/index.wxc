@@ -1,0 +1,94 @@
+<template>
+  <radio-group class="select__group" bindchange="radioChange">
+    <label class="select__cell" wx:for="{{items}}" wx:key="value">
+      <view class="select__text">{{item.title}}</view>
+      <view class="select__desc">{{item.desc}}</view>
+      <radio class="select__radio" color="{{color}}" value="{{item.value}}" checked="{{item.value === checked}}"></radio>
+    </label>
+  </radio-group>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [ ],
+  properties: {
+    items: {
+      type: Array,
+      value: []
+    },
+    checked: {
+      type: [String, Number],
+      value: ''
+    },
+    color: {
+      type: String,
+      value: '#ff5777'
+    }
+  },
+  data: { },
+  methods: {
+    radioChange(e) {
+      this.setData({
+        checked: e.detail.value
+      });
+      let detail = e.detail || {};
+      let option = {};
+      this.triggerEvent('change', detail, option);
+    }
+  }
+}
+</script>
+
+<style lang="pcss">
+  @b select {
+    @e group {
+      width: 100%;
+      background: #fff;
+    }
+    @e cell {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 90rpx;
+      line-height: 90rpx;
+      font-size: 28rpx;
+      color: #666;
+    }
+    @e cell::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(.5);
+      transform-origin: 0 0;
+      box-sizing: border-box;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    @e cell:last-child::after {
+      display: none
+    }
+    @e text {
+      margin: 0 24rpx;
+      color: #333;
+    }
+    @e desc {
+      flex: 1;
+    }
+    @e checked {
+      position: relative;
+      text-align: right;
+      color: #666
+    }
+    @e radio {
+      margin-right: 24rpx;
+    }
+  }
+</style>

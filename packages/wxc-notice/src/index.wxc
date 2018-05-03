@@ -1,0 +1,136 @@
+<template>
+  <view wx:if="{{isShow && notice}}" class="notice" style="background-color: {{bgColor}};">
+    <wxc-icon wx:if="{{showIcon}}" class="notice__icon" type="notice" size="38" color="{{iconColor}}"></wxc-icon>
+    <view class="notice__text--wrap" style="color: {{color}};">
+      <view wx:if="{{scroll}}" class="notice__text notice__text--animate"><text class="notice__text--span">{{notice}}</text><text class="notice__text--span">{{notice}}</text></view>
+      <view wx:else class="notice__text"><text class="notice__text--span">{{notice}}</text></view>
+    </view>
+    <block wx:if="{{close}}">
+      <view class="notice__text--overlay" style="background: linear-gradient(to right, {{bgRgba}}, {{bgColor}});"></view>
+      <wxc-icon class="notice__close" type="close" size="24" color="#fff" bindtap="onDismissNotice"></wxc-icon>
+    </block>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [ ],
+  properties: {
+    scroll: {
+      type: Boolean,
+      value: false
+    },
+    isShow: {
+      type: Boolean,
+      value: true
+    },
+    notice: {
+      type: String,
+      value: ''
+    },
+    bgColor: {
+      type: String,
+      value: '#ff5777' // 通告栏背景色
+    },
+    color: {
+      type: String,
+      value: '#fff' // 文字颜色
+    },
+    showIcon: {
+      type: Boolean,
+      value: false
+    },
+    iconColor: {
+      type: String,
+      value: '#fff'
+    },
+    close: {
+      type: Boolean,
+      value: false
+    },
+    bgRgba: {
+      type: String,
+      value: 'rgba(255, 85, 119, 0)' // 背景颜色的rgba形式，a的值为0，配合close使用
+    }
+  },
+  data: { },
+  methods: {
+    onDismissNotice(event) {
+      this.setData({
+        isShow: false
+      });
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('close', detail, option);
+    }
+  }
+}
+
+
+</script>
+
+<style lang="pcss">
+  @keyframes notice {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @b notice {
+    display: flex;
+    position: relative;
+    height: 70rpx;
+    padding: 0 24rpx 0 30rpx;
+    align-items: center;
+  }
+  @b notice {
+    @e icon {
+      display: block;
+      width: 36rpx;
+      height: 30rpx;
+      line-height: 30rpx;
+      margin-right: 12rpx;
+    }
+    @e text {
+      display: inline-block;
+      margin-right: 30rpx;
+      white-space: nowrap;
+      font-size: 24rpx;
+      line-height: 70rpx;
+    }
+    @e text {
+      @m wrap {
+        flex: 1;
+        overflow: hidden;
+      }
+      @m animate {
+        animation: notice 8s linear infinite;
+      }
+      @m overlay {
+        position: absolute;
+        width: 44rpx;
+        height: 100%;
+        top: 0;
+        right: 60rpx;
+        z-index: 1;
+      }
+      @m span {
+        display: inline-block;
+        margin-right: 18rpx;
+      }
+    }
+    @e close {
+      margin-left: 20rpx;
+      color: #fff;
+      font-size: 24rpx;
+    }
+  }
+</style>

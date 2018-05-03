@@ -1,0 +1,19 @@
+{
+  "name": "@minui/wxc-button",
+  "version": "1.0.1",
+  "description": "MinUI 小程序组件 - 按钮组件",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meili/minui/tree/master/packages/wxc-button"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "minConfig": {
+    "component": true
+  }
+}

@@ -1,0 +1,136 @@
+<template>
+  <view class="list__body list__{{mode}}" bindtap="onClick">
+
+    <image wx:if="{{src}}" class="list__image" src="{{src}}" mode="aspectFill"></image>
+
+    <wxc-icon wx:if="{{!src && icon}}" class="list__icon" size="38" type="{{icon}}" color="{{iconColor}}"></wxc-icon>
+
+    <view class="list__title">
+      <view class="list__title--main">{{title}}</view>
+      <view wx:if="{{detail}}" class="list__title--sub">{{detail}}</view>
+    </view>
+
+    <view wx:if="{{dot}}" style="background: {{dotColor}}" class="list__desc--dot"></view>
+
+    <slot wx:if="{{!desc}}"></slot>
+
+    <view wx:if="{{desc}}" class="list__desc--text">{{desc}}</view>
+
+    <wxc-icon wx:if="{{arrow}}" class="list__desc--arrow" type="arrow-right" size="30" color="#c2c2c2"></wxc-icon>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [ ],
+  properties: {
+    title: {
+      type: String,
+      value: '' // 标题
+    },
+    detail: {
+      type: String,
+      value: '' // 标题下方的具体描述
+    },
+    desc: {
+      type: String,
+      value: '' // 右侧描述部分
+    },
+    icon: {
+      type: String,
+      value: '' // 标题左侧icon pintuan
+    },
+    iconColor: {
+      type: String,
+      value: '#ff5077' // 标题左侧icon颜色
+    },
+    src: {
+      type: String,
+      value: '' // 标题左侧icon图片链接
+    },
+    dot: {
+      type: Boolean,
+      value: false // 右侧描述部分的左侧红点
+    },
+    dotColor: {
+      type: String,
+      value: '#f5123e' // 右侧描述部分的左侧红点颜色
+    },
+    arrow: {
+      type: Boolean,
+      value: true  // 是否显示箭头
+    },
+    mode: {
+      type: String,
+      value: 'normal' // 有边框和无边框 normal, none
+    }
+  },
+  data: { },
+  methods: {
+    onClick(event) {
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('click', detail, option);
+    }
+  }
+}
+
+
+</script>
+
+<style lang="pcss">
+  @b list {
+    @e body {
+      display: flex;
+      align-items: center;
+      min-height: 90rpx;
+      line-height: 1.4;
+      padding: 20rpx 30rpx 20rpx 0;
+      margin-left: 30rpx;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ececec;
+      font-size: 32rpx;
+      color: #333;
+    }
+    @e none {
+      border: none;
+    }
+    @e image {
+      width: 38rpx;
+      height: 38rpx;
+      margin-right: 30rpx;
+    }
+    @e icon {
+      margin-right: 30rpx;
+    }
+    @e title {
+      flex: 1;
+      @m sub {
+        margin-top: 14rpx;
+        font-size: 28rpx;
+        line-height: 40rpx;
+        color: #999;
+      }
+    }
+    @e desc {
+      @m dot {
+        width: 16rpx;
+        height: 16rpx;
+        margin-right: 18rpx;
+        border-radius: 16rpx;
+      }
+      @m text {
+        color: #999;
+        font-size: 24rpx;
+      }
+      @m arrow {
+        margin-left: 8rpx;
+      }
+    }
+  }
+</style>

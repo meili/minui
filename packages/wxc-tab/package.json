@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-tab",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "MinUI 小程序组件 - 选项卡",
   "main": "dist/index.js",
   "repository": {

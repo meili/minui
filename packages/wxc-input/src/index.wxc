@@ -1,0 +1,230 @@
+<template>
+  <view class="input">
+    <view class="input__combine input__{{mode}} {{error? 'input__error': ''}}">
+      <view class="input__label" wx:if="{{title}}">{{title}}</view>
+
+      <image wx:if="{{!title && src}}" class="input__icon" mode="aspectFit" src="{{src}}"></image>
+
+      <wxc-icon wx:if="{{!title && !src && icon}}" class="input__icon" type="{{icon}}" color="{{iconColor || '#999'}}" size="38"></wxc-icon>
+
+      <input
+          class="input__form {{right? 'input__right' : ''}}"
+          value="{{value}}"
+          type="{{type}}"
+          password="{{password}}"
+          placeholder="{{placeholder}}"
+          placeholder-style="{{placeholderStyle}}"
+          placeholder-class="input__placeholder"
+          disabled="{{disabled}}"
+          maxlength="{{maxlength}}"
+          cursor-spacing="{{cursorSpacing}}"
+          focus="{{focus}}"
+          confirm-type="{{confirmType}}"
+          confirm-hold="{{confirmHold}}"
+          cursor="{{cursor}}"
+          selection-start="{{selectionStart}}"
+          selection-end="{{selectionEnd}}"
+          adjust-position="{{adjustPosition}}"
+          bindinput="onInput"
+          bindfocus="onFocus"
+          bindblur="onBlur"
+          bindconfirm="onConfirm"
+      />
+    </view>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [],
+  properties: {
+    title: {
+      type: String,
+      value: ''
+    },
+    src: {
+      type: String,
+      value: ''
+    },
+    icon: {
+      type: String,
+      value: ''
+    },
+    iconColor: {
+      type: String,
+      value: ''
+    },
+    mode: {
+      type: String,
+      value: 'normal' // 输入框的模式选择，可选值：wrapped，有边框包裹, normal，只有下边框，none，无边框
+    },
+    right: {
+      type: Boolean,
+      value: false // 输入框是否居右显示
+    },
+    error: {
+      type: Boolean,
+      value: false
+    },
+    value: {
+      type: String,
+      value: ''
+    },
+    type: {
+      type: String,
+      value: 'text'
+    },
+    password: {
+      type: Boolean,
+      value: false
+    },
+    placeholder: {
+      type: String,
+      value: ''
+    },
+    placeholderStyle: {
+      type: String,
+      value: ''
+    },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    maxlength: {
+      type: [Number, String],
+      value: 140
+    },
+    cursorSpacing: {
+      type: [Number, String],
+      value: 0
+    },
+    focus: {
+      type: Boolean,
+      value: false
+    },
+    confirmType: {
+      type: String,
+      value: 'done'
+    },
+    confirmHold: {
+      type: Boolean,
+      value: false
+    },
+    cursor: {
+      type: [Number, String],
+      value: 0
+    },
+    selectionStart: {
+      type: [Number, String],
+      value: -1
+    },
+    selectionEnd: {
+      type: [Number, String],
+      value: -1
+    },
+    adjustPosition: {
+      type: Boolean,
+      value: true
+    }
+  },
+  data: { },
+  methods: {
+    onInput(event) {
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('input', detail, option);
+    },
+    onFocus(event) {
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('focus', detail, option);
+    },
+    onBlur(event) {
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('blur', detail, option);
+    },
+    onConfirm(event) {
+      let detail = event.detail;
+      let option = {};
+      this.triggerEvent('confirm', detail, option);
+    }
+  }
+}
+</script>
+
+<style lang="pcss">
+  @b input {
+    @e combine {
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      line-height: 1.4;
+      padding: 24rpx 30rpx;
+      box-sizing:border-box;
+      font-size: 28rpx;
+      color: #333;
+    }
+    @e combine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(.5);
+      transform-origin: 0 0;
+      pointer-events: none;
+      box-sizing: border-box;
+      border: 0 solid #e5e5e5;
+      border-bottom-width: 1px;
+    }
+    @e wrapped:after {
+      border: 1px solid #e5e5e5;
+      border-radius: 8rpx;
+    }
+    @e none::after {
+      display: none
+    }
+    @e right {
+      text-align: right;
+    }
+    @e error {
+      color: #fc3c64;
+    }
+    @e error:after {
+      border-color: #fc3c64;
+    }
+    @e label {
+      min-width: 163rpx;
+      height: 46rpx;
+      line-height: 46rpx;
+      color: #333;
+    }
+    @e icon {
+      width: 40rpx;
+      height: 40rpx;
+      line-height: 36rpx;
+      margin-right: 32rpx;
+      color: #999;
+    }
+    @e form {
+      flex: 1;
+      height: 46rpx;
+      min-height: 46rpx;
+      line-height: 46rpx;
+      font-size: 32rpx;
+    }
+    @e placeholder {
+      font-size: 28rpx;
+      color: #999;
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+<template>
+  <wxc-panel margin="{{false}}" >
+    <view class="content">无上边距模式</view>
+  </wxc-panel>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-panel': '@minui/wxc-panel'
+    }
+  },
+  data: { },
+  methods: {
+    onClick(event) {
+      console.log(event)
+    }
+  }
+}
+</script>
+
+<style>
+  .content {
+    padding: 30rpx;
+  }
+</style>

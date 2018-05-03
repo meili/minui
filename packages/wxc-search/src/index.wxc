@@ -1,0 +1,194 @@
+<template>
+  <form report-submit="{{true}}" bindsubmit="onSubmit">
+    <view class="search">
+      <view class="search__form search__content--{{align}}" style="border-radius:{{radius}}rpx;background: {{bgColor}};">
+        <wxc-icon wx:if="{{showIcon}}" class="search__icon" type="search" size="30" color="{{iconColor}}"></wxc-icon>
+
+        <text wx:if="{{mode == 'static'}}" class="search__text" style="color: {{phColor}}">{{placeholder}}</text>
+
+        <block wx:if="{{mode == 'normal'}}">
+          <input class="search__input" style="color: {{color}};" placeholder-style="color: {{phColor}};" placeholder="{{placeholder}}" value="{{value}}" bindinput="onInput" bindconfirm="onConfirm" confirm-type="search"/>
+          <view wx:if="{{showClear && _showClear}}" class="search__clear" bindtap="onClear">
+            <wxc-icon type="clear" color="#d5d5d5" size="30"></wxc-icon>
+          </view>
+        </block>
+      </view>
+
+      <button wx:if="{{mode == 'normal' && button}}" class="search__button" style="color: {{btnColor}};" bindtap="onConfirm" form-type="submit">{{button}}</button>
+    </view>
+  </form>
+
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [ ],
+  properties: {
+    showIcon: {
+      type: Boolean,
+      value: true // 是否显示 search icon
+    },
+    iconColor: {
+      type: String,
+      value: '#bbb' // search icon 的颜色
+    },
+    phColor: {
+      type: String,
+      value: '#bbb' // placeholder 的颜色
+    },
+    bgColor: {
+      type: String,
+      value: '#f6f6f6' // 搜索栏背景色
+    },
+    align: {
+      type: String,
+      value: 'left' // static 模式下，内容居左还是居中center, left
+    },
+    color: {
+      type: String,
+      value: '#333' // 输入框字体颜色
+    },
+    radius: {
+      type: [Number, String],
+      value: 6  // 圆角弧度
+    },
+    placeholder: {
+      type: String,
+      value: '搜索'
+    },
+    mode: {
+      type: String,
+      value: 'normal' // normal static
+    },
+    showClear: {
+      type: Boolean,
+      value: true
+    },
+    button: {
+      type: String,
+      value: '' // 显示按钮
+    },
+    btnColor: {
+      type: String,
+      value: '#333' // 按钮颜色
+    },
+  },
+  data: {
+    _showClear: false,
+    value: ''
+  },
+  methods: {
+    onInput(e) {
+      let value = e.detail.value;
+      let _showClear = value && this.data.showClear;
+      this.setData({
+        value,
+        _showClear
+      });
+
+      let detail = e.detail || {};
+      let option = {};
+      this.triggerEvent('input', detail, option);
+    },
+    onConfirm(e) {
+      let detail = e.detail || {};
+      let option = {};
+      detail.value = this.data.value;
+      this.triggerEvent('confirm', detail, option);
+    },
+    onSubmit(e) {
+      let detail = e.detail || {};
+      let option = {};
+      detail.value = this.data.value;
+      this.triggerEvent('submit', detail, option);
+    },
+    onClear() {
+      this.setData({
+        value: '',
+        _showClear: false
+      })
+    }
+  }
+}
+
+</script>
+
+<style lang="pcss">
+  @b search {
+    display: flex;
+    align-items: center;
+    min-width: 510rpx;
+    height: 60rpx;
+    overflow: hidden;
+  }
+  @b search {
+    @e form {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-grow: 1;
+      min-width: 510rpx;
+      height: 60rpx;
+      overflow: hidden;
+    }
+    @e content {
+      @m center {
+        justify-content: center;
+      }
+      @m left {
+        justify-content: flex-start;
+      }
+    }
+    @e icon {
+      margin-left: 24rpx;
+      font-weight: bold;
+    }
+    @e text {
+      font-size: 24rpx;
+      max-width: 570rpx;
+      margin-left: 16rpx;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+    }
+    @e input {
+      flex: 1;
+      min-width: 476rpx;
+      height: 60rpx;
+      padding: 0 16rpx;
+      font-size: 28rpx;
+      color: #333;
+      overflow: hidden;
+    }
+    @e clear {
+      position: absolute;
+      right: 3rpx;
+      bottom: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 40rpx;
+      height: 60rpx;
+    }
+    @e button {
+      width: 120rpx;
+      height: 60rpx;
+      line-height: 60rpx;
+      font-size: 28rpx;
+      overflow: hidden;
+      background: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @e button::after {
+      border: none;
+    }
+  }
+</style>

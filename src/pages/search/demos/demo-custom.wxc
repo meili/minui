@@ -1,0 +1,34 @@
+<template>
+  <view class="search-wrap">
+    <wxc-search class="search" showClear="{{false}}" bg-color="rgba(255, 255, 255, 0.18)" color="#fff" icon-color="#cacff1" ph-color="#cacff1" placeholder="请输入 直播内容/主播/商品"></wxc-search>
+  </view>
+
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon',
+      'wxc-search': '@minui/wxc-search'
+    }
+  },
+  data: { },
+  methods: { }
+}
+</script>
+
+<style>
+  .search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    color: #fff;
+    background: #8484b7;
+  }
+  .search {
+    flex-grow: 1;
+    margin: 15rpx 24rpx;
+  }
+</style>

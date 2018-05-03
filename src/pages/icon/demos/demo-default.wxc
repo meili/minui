@@ -27,7 +27,7 @@ export default {
       'notice', 'shop', 'delete', 'comment', 'edit',
       'feedback', 'location', 'address', 'after-sales', 'footprint',
       'weixin', 'top', 'purse', 'unreceived', 'truck',
-      'rate', 'coupon', 'message'
+      'rate', 'coupon', 'message','clear'
     ]
   },
   methods: {}

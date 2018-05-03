@@ -1,0 +1,18 @@
+<template>
+  <wxc-rate></wxc-rate>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-rate': '@minui/wxc-rate'
+    }
+  },
+  data: { },
+  methods: { }
+}
+</script>
+
+<style>
+</style>

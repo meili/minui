@@ -1,0 +1,114 @@
+<template>
+  <view class="list-wrap">
+
+    <view class="list-item">
+      <wxc-list title="标题文字" desc="内容描述" mode="none"></wxc-list>
+      <wxc-list title="标题文字" desc="内容描述" dot="{{true}}"></wxc-list>
+      <wxc-list title="标题文字" desc="内容描述" arrow="{{false}}"></wxc-list>
+      <wxc-list title="标题文字" arrow="{{false}}" mode="none">
+        <switch type="switch" color="#ff5777"></switch>
+      </wxc-list>
+    </view>
+
+    <view class="list-item">
+      <view class="list-check">
+        <view class="check-wrap"></view>
+        <wxc-list class="item" title="标题文字" desc="内容描述"></wxc-list>
+      </view>
+      <view class="list-check">
+        <view class="check-wrap" bindtap="onCheck">
+          <wxc-icon wx:if="{{check}}" class="check" type="check" size="46" color="#ff5777"></wxc-icon>
+        </view>
+        <wxc-list class="item" title="标题文字" desc="内容描述" mode="none"></wxc-list>
+      </view>
+    </view>
+
+    <view class="list-item">
+      <view class="list-check">
+        <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+        <wxc-list class="item" title="标题文字" detail="内容描述"></wxc-list>
+      </view>
+      <view class="list-check">
+        <image class="list-image" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+
+        <wxc-list class="item" title="标题文字" detail="内容描述" mode="none"></wxc-list>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-list': '@minui/wxc-list',
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  data: {
+    check: true
+  },
+  methods: {
+    onCheck() {
+      let check = this.data.check;
+      this.setData({
+          check: !check
+      })
+    }
+  }
+}
+</script>
+
+<style>
+  .list-wrap {
+    width: 100%;
+    background: #efefef;
+    padding-bottom: 30rpx;
+    padding-top: 30rpx;
+  }
+  .list-item {
+    background: #fff;
+    margin-bottom: 30rpx;
+  }
+  .list-item:last-child {
+    margin: 0;
+  }
+
+  .list-check {
+    display: flex;
+    align-items: center
+  }
+  .check-wrap {
+    position: relative;
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 30rpx;
+    border-radius: 100%;
+    border: 1px solid #d8d8d8;
+  }
+  .check {
+    position: absolute;
+    top: 0;
+    left: -2rpx;
+    width: 100%;
+    height: 100%;
+    line-height: 42rpx;
+  }
+  .list-image {
+    width: 102rpx;
+    height: 102rpx;
+    margin-left: 30rpx;
+  }
+  .radius {
+    border-radius: 100px;
+  }
+  .item {
+    flex: 1;
+  }
+  .list-image {
+    width: 102rpx;
+    height: 102rpx;
+    background: #d8d8d8;
+  }
+</style>

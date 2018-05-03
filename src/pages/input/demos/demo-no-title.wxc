@@ -1,0 +1,18 @@
+<template>
+    <wxc-input type="text" placeholder="请输入收货人姓名"></wxc-input>
+</template>
+
+<script>
+    export default {
+        config: {
+            usingComponents: {
+                'wxc-input': '@minui/wxc-input'
+            }
+        },
+        data: { },
+        methods: { }
+    }
+</script>
+
+<style>
+</style>

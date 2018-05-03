@@ -1,0 +1,22 @@
+<template>
+  <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-notice': '@minui/wxc-notice'
+    }
+  },
+  data: {
+    notice: '蘑菇街平台将在1月22日0点－9点进行系统升级，升级期间将暂停服务，敬请谅解。'
+  },
+  methods: {
+
+  }
+}
+</script>
+
+<style>
+</style>

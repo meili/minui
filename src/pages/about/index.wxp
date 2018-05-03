@@ -62,6 +62,22 @@
 
   <view class="section">
     <view class="section__changelog">
+      <view class="title--h3">v2.0.0（2018.04.27）</view>
+      <view class="section__p"> - 新增 button 组件</view>
+      <view class="section__p"> - 新增 input 组件</view>
+      <view class="section__p"> - 新增 list 组件</view>
+      <view class="section__p"> - 新增 notice 组件</view>
+      <view class="section__p"> - 新增 panel 组件</view>
+      <view class="section__p"> - 新增 search 组件</view>
+      <view class="section__p"> - 新增 select 组件</view>
+      <view class="section__p"> - 新增 rate 组件</view>
+      <view class="section__p"> - popup 组件文档补充，增加 locked 属性的说明</view>
+      <view class="section__p"> - toast 组件 show() 方法增加 message 参数</view>
+      <view class="section__p"> - tab 组件 panel 高度自适应</view>
+      <view class="section__p"> - counter 组件加减操作符新增 color 属性</view>
+    </view>
+
+    <view class="section__changelog">
       <view class="title--h3">v1.0.10（2018.02.09）</view>
       <view class="section__p"> - toast 组件 icon-image 属性更改为 src，1.0.7 及以上版本的 min 支持本地图片路径</view>
       <view class="section__p"> - tab 组件增加属性 full-screen，tab 组件可撑满全屏</view>

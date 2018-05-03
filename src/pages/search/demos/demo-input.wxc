@@ -1,0 +1,53 @@
+<template>
+  <view class="search-wrap">
+    <wxc-search class="search"
+                show-icon="{{false}}"
+                bg-color="#fff"
+                button="搜索"
+                btn-color="#2CB42F"
+                bind:input="onInput"
+                bind:submit="submitForm"
+                bind:confirm="onConfirm"></wxc-search>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon',
+      'wxc-search': '@minui/wxc-search'
+    }
+  },
+  data: { },
+  methods: {
+    onInput(e) {
+      console.log('input: ', e.detail.value)
+    },
+    onConfirm(e) {
+      console.log('confirm: ', e)
+    },
+    onSearch(e) {
+      console.log('onSearch: ', e)
+    },
+    submitForm(e) {
+      console.log('submit', e)
+    }
+  }
+}
+</script>
+
+<style>
+  .search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    color: #fff;
+    background: #f6f6f6;
+  }
+  .search {
+    flex: 1;
+    margin-left: 24rpx;
+  }
+</style>

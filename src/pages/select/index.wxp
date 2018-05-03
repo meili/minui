@@ -1,0 +1,30 @@
+<template>
+  <example title="wxc-select" desc="选择">
+
+    <example-demo title="基础用法" desc="">
+      <demo-default></demo-default>
+    </example-demo>
+
+    <example-demo title="自定义" desc="">
+      <demo-custom></demo-custom>
+    </example-demo>
+  </example>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'example': '@minui/wxc-example',
+      'example-demo': '@minui/wxc-example-demo',
+      'example-md': '@minui/wxc-example-md',
+      'demo-default': './demos/demo-default',
+      'demo-custom': './demos/demo-custom'
+    }
+  },
+  data: { }
+}
+</script>
+
+<style>
+</style>

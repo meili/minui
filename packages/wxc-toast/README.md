@@ -27,7 +27,7 @@ $ min install @minui/wxc-toast
 
 | 名称                  | 描述                         |
 |----------------------|------------------------------|
-|`show`                | [说明]：显示toast。<br>[类型]：`Function`<br>[参数]：`void`<br>[返回]：`void`|
+|`show(msg)`           | [说明]：显示toast。<br>[类型]：`Function`<br>[参数]：`String`<br>[返回]：`void`|
 
 ## Link
 ||地址|
@@ -40,6 +40,8 @@ $ min install @minui/wxc-toast
 ![toast](https://s10.mogucdn.com/mlcdn/c45406/171107_1361j09d04c4426a5gd743i7kk5hg_480x480.jpg_225x999.jpg)
 
 ##  ChangeLog
+#### v1.0.8（2018.03.29)
+- show() 方法增加 message 参数
 
 #### v1.0.7（2018.01.16)
 - icon-image 属性更改为 src，1.0.7 及以上版本的 min 支持本地图片路径

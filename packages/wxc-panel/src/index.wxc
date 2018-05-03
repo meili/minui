@@ -1,0 +1,77 @@
+<template>
+  <view class="panel__title" wx:if="{{title}}">{{title}}</view>
+  <view class="panel {{margin? '': 'panel__margin'}} {{border? '' : 'panel__border'}}" bindtap="onClick">
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: { }
+  },
+  behaviors: [],
+  properties: {
+    title: {
+      type: String,
+      value: ''
+    },
+    margin: {
+      type: Boolean,
+      value: true
+    },
+    border: {
+      type: Boolean,
+      value: true
+    }
+  },
+  data: { },
+  methods: {
+    onClick(event) {
+        let detail = event.detail;
+        let option = {};
+        this.triggerEvent('click', detail, option);
+    }
+  }
+}
+
+
+</script>
+
+<style lang="pcss">
+  @b panel {
+    position: relative;
+    margin-top: 20rpx;
+    background: #fff;
+    overflow: hidden;
+  }
+  @b panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 0 solid #e5e5e5;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+  @b panel {
+    @e title {
+      font-size: 28rpx;
+      line-height: 1;
+      color: #999;
+      padding: 40rpx 30rpx 0 30rpx;
+    }
+    @e margin {
+      margin-top: 0;
+    }
+    @e border::after {
+      border: 0 none;
+    }
+  }
+</style>

@@ -1,0 +1,295 @@
+<template>
+    <form report-submit="{{true}}" bindsubmit="onSubmit">
+        <button class="btn btn__size--{{size}} btn__{{type}}--{{plain}}"
+                hover-class="{{hoverClass}}"
+                style="{{btnStyle}}"
+                loading="{{loading}}"
+                form-type="submit"
+                open-type="{{openType}}"
+                app-parameter="{{appParameter}}"
+                hover-stop-propagation="{{hoverStopPropagation}}"
+                hover-start-time="{{hoverStartTime}}"
+                hover-stay-time="{{hoverStayTime}}"
+                lang="{{lang}}"
+                session-from="{{sessionFrom}}"
+                send-message-title="{{sendMessageTitle}}"
+                send-message-path="{{sendMessagePath}}"
+                send-message-img="{{sendMessageImg}}"
+                show-message-card="{{showMessageCard}}"
+                bindtap="btnClick"
+                bindgetuserinfo="getUserInfo"
+                bindcontact="onContact"
+                bindgetphonenumber="getPhoneNumber"
+                binderrror="onError"
+        >
+            {{value}}
+            <slot wx:if="{{!value}}"></slot>
+            </button>
+    </form>
+</template>
+
+<script>
+    export default {
+        config: {
+            usingComponents: {}
+        },
+        behaviors: [],
+        properties: {
+            size: {
+                type: String,
+                value: "normal" // normal small large
+            },
+            type: {
+                type: String,
+                value: '' //beauty selection success primary danger warning secondary info dark disabled  按钮的样式类型
+            },
+            plain: {
+                type: Boolean,
+                value: false // 按钮是否镂空，背景色透明
+            },
+            value: {
+                type: String,
+                value: ""
+            },
+            hoverClass: {
+                type: String,
+                value: "btn__hover" // btn__hover none
+            },
+            loading: {
+                type: Boolean,
+                value: false // 名称前是否带 loading 图标
+            },
+            btnStyle: {
+                type: String,
+                value: ""
+            },
+            openType: {
+                type: String,
+                value: ""
+            },
+            appParameter: {
+                type: String,
+                value: ""
+            },
+            hoverStopPropagation: {
+                type: Boolean,
+                value: false
+            },
+            hoverStartTime: {
+                type: [Number, String],
+                value: 20
+            },
+            hoverStayTime: {
+                type: [Number, String],
+                value: 70
+            },
+            lang: {
+                type: String,
+                value: "en"
+            },
+            sessionFrom: {
+                type: String,
+                value: ""
+            },
+            sendMessageTitle: {
+                type: String,
+                value: ""
+            },
+            sendMessagePath: {
+                type: String,
+                value: ""
+            },
+            sendMessageImg: {
+                type: String,
+                value: ""
+            },
+            showMessageCard: {
+                type: Boolean,
+                value: false
+            }
+
+        },
+        data: {},
+        methods: {
+            onSubmit(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('submit', detail, option);
+            },
+            btnClick(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('tap', detail, option);
+            },
+            getUserInfo(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('getuserinfo', detail, option);
+            },
+            onContact(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('contact', detail, option);
+            },
+            getPhoneNumber(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('getphonenumber', detail, option);
+            },
+            onError(event) {
+                let detail = event.detail;
+                let option = {};
+                this.triggerEvent('errror', detail, option);
+            }
+        }
+    }
+</script>
+
+<style lang="pcss">
+    .btn {
+        display: inline-block;
+        margin: 0;
+        border: 1px solid transparent;
+        border-radius: 4rpx;
+        white-space: nowrap;
+        vertical-align: middle;
+        font-weight: 400;
+    }
+
+    .btn::after {
+        content: none;
+    }
+
+    /* size 属性 large, normal, small*/
+    .btn__size--large {
+        width: 690rpx;
+        height: 90rpx;
+        line-height: 90rpx;
+        padding: 0 24rpx;
+        font-size: 36rpx;
+    }
+    .btn__size--normal {
+        display: inline-block;
+        min-width: 180rpx;
+        height: 66rpx;
+        line-height: 66rpx;
+        padding: 0 24rpx;
+        font-size: 28rpx;
+    }
+
+    .btn__size--small {
+        display: inline-block;
+        min-width: 102rpx;
+        height: 48rpx;
+        line-height: 48rpx;
+        padding: 0 24rpx;
+        font-size: 24rpx;
+    }
+
+    /* type 属性 */
+    .btn__selection--false {
+        color: #333;
+        background-color: #5AC837;
+        border-color: #5AC837;
+    }
+    .btn__selection--true {
+        color: #333;
+        background: transparent none;
+        border-color: #5AC837;
+    }
+    .btn__beauty--false {
+        color: #fff;
+        background-color: #ff5777;
+        border-color: #ff5777;
+    }
+    .btn__beauty--true {
+        color: #ff5777;
+        background: transparent none;
+        border-color: #ff5777;
+    }
+    .btn__primary--false {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn__primary--true {
+        color: #007bff;
+        background: transparent none;
+        border-color: #007bff;
+    }
+    .btn__success--false {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+    .btn__success--true {
+        color: #28a745;
+        background: transparent none;
+        border-color: #28a745;
+    }
+    .btn__danger--false {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+    .btn__danger--true {
+        color: #dc3545;
+        background: transparent none;
+        border-color: #dc3545;
+    }
+    .btn__warning--false {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+    .btn__warning--true {
+        color: #ffc107;
+        background: transparent none;
+        border-color: #ffc107;
+    }
+    .btn__secondary--false {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+    .btn__secondary--true {
+        color: #6c757d;
+        background: transparent none;
+        border-color: #6c757d;
+    }
+    .btn__info--false {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+    .btn__info--true {
+        color: #17a2b8;
+        background: transparent none;
+        border-color: #17a2b8;
+    }
+    .btn__dark--false {
+        color: #fff;
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+    .btn__dark--true {
+        color: #343a40;
+        background: transparent none;
+        border-color: #343a40;
+    }
+    .btn__disabled--false {
+        color: #fff;
+        background-color: #d2d2d2;
+        border-color: #d2d2d2;
+    }
+    .btn__disabled--true {
+        color: #333;
+        background: transparent none;
+        border-color: #999;
+    }
+
+    /* hover */
+    .btn__hover {
+        opacity: 0.9;
+    }
+</style>

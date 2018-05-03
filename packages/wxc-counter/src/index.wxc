@@ -2,11 +2,11 @@
   <view class="counter">
     <view class="counter__number">
       <view class="counter__modify counter__opt{{number <= min || disabled ? ' counter__no' : ''}}" bindtap="minusHandler">
-        <wxc-icon type="minus"></wxc-icon>
+        <wxc-icon type="minus" color="{{number <= min || disabled ? '#d2d2d2' : color}}"></wxc-icon>
       </view>
         <text class="counter__modify counter__text{{disabled ? ' counter__no' : ''}}">{{number}}</text>
         <view class="counter__modify counter__opt{{number >= max || disabled ? ' counter__no' : ''}}" bindtap="addHandler">
-          <wxc-icon type="add"></wxc-icon>
+          <wxc-icon type="add" color="{{number >= max || disabled ? '#d2d2d2' : color}}"></wxc-icon>
         </view>
     </view>
   </view>
@@ -21,6 +21,10 @@ export default {
   },
   behaviors: [],
   properties: {
+    color: {
+      type: String,
+      value: '#ff5777'
+    },
     number: {
       type: [Number, String],
       value: 0,

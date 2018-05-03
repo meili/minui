@@ -1,0 +1,33 @@
+<template>
+    <view class="input-wrap">
+        <wxc-input type="number" mode="wrapped" right="{{true}}" title="消费总额" placeholder="询问收银员后输入"></wxc-input>
+    </view>
+
+    <view class="input-wrap">
+        <wxc-input type="number" mode="wrapped" right="{{true}}" error="{{true}}" title="不参与优惠金额" placeholder="询问收银员后输入"></wxc-input>
+    </view>
+
+    <view class="input-wrap">
+        <wxc-input type="number" mode="wrapped" placeholder="请输入消费金额"></wxc-input>
+    </view>
+
+</template>
+
+<script>
+    export default {
+        config: {
+            usingComponents: {
+                'wxc-input': '@minui/wxc-input'
+            }
+        },
+        data: { },
+        methods: { }
+    }
+</script>
+
+<style>
+    .input-wrap {
+        position: relative;
+        margin: 20rpx 10rpx 0 10rpx;
+    }
+</style>

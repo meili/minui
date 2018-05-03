@@ -8,7 +8,7 @@
       <demo-disable></demo-disable>
     </example-demo>
 
-    <example-demo title="设置最大值" desc="设置最大值的计数器展示">
+    <example-demo title="设置最大值和操作符号颜色" desc="设置最大值的计数器展示">
       <demo-max></demo-max>
     </example-demo>
     <example-demo title="设置最小值" desc="设置最小值的计数器展示">

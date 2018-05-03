@@ -33,6 +33,12 @@ module.exports = {
           "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_644d29k85d23lgafie50h51ci8gg1_480x480.jpg"
         },
         {
+          "id": "panel",
+          "name": "面板",
+          "icon": "",
+          "code": ""
+        },
+        {
           "id": "cc",
           "name": "水平垂直居中",
           "icon": "",
@@ -97,11 +103,61 @@ module.exports = {
       ]
     },
     {
+      id: 'form',
+      name: '表单组件',
+      open: false,
+      icon: 'https://s10.mogucdn.com/mlcdn/c45406/171016_5ef72ihcc0bb6g2bhi8036gc2c060_68x68.png',
+      pages: [
+        {
+          "id": "button",
+          "name": "按钮",
+          "icon": "",
+          "code": ""
+        },
+        {
+          "id": "input",
+          "name": "输入框",
+          "icon": "",
+          "code": ""
+        },
+        {
+          "id": "list",
+          "name": "列表",
+          "icon": "",
+          "code": ""
+        },
+        {
+          "id": "select",
+          "name": "选择",
+          "icon": "",
+          "code": ""
+        }
+      ]
+    },
+    {
       id: 'page',
       name: '功能组件',
       open: false,
       icon: 'https://s10.mogucdn.com/mlcdn/c45406/171016_4i2hdb0798de3h5l50i3ag3je5ij2_68x68.png',
       pages: [
+        {
+          "id": "notice",
+          "name": "通告栏",
+          "icon": "",
+          "code": ""
+        },
+        {
+          "id": "search",
+          "name": "搜索栏",
+          "icon": "",
+          "code": ""
+        },
+        {
+          "id": "rate",
+          "name": "评分",
+          "icon": "",
+          "code": ""
+        },
         {
           "id": "abnor",
           "name": "异常流展示",

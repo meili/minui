@@ -18,6 +18,7 @@ $ min install @minui/wxc-counter
 |`number`              | [说明]：当前数值，[默认值]：0，[类型]：字符串或者数值 |
 |`max`                 | [说明]：上限值，[默认值]：1，[类型]：字符串或者数值 |
 |`min`                 | [说明]：下限值，[默认值]：0，[类型]：字符串或者数值 |
+|`color`               | [说明]：正常状态下加减操作符的颜色，[默认值]：#ff5777，[类型]：字符串 |
 |`changenumber`        | [说明]：数值改变触发的事件，[类型]：函数 |
 
 ## Link
@@ -31,6 +32,8 @@ $ min install @minui/wxc-counter
 ![counter](https://s10.mogucdn.com/mlcdn/c45406/171107_8f74132b6gi7gb1kaej6icddf7e88_480x480.jpg_225x999.jpg)
 
 ##  ChangeLog
+#### v1.0.3（2018.04.27）
+- counter 组件新增加减操作符 color 属性
 
 #### v1.0.2（2017.11.02）
 

@@ -1,0 +1,30 @@
+<template>
+  <wxc-select items="{{items}}" color="#28a745" checked="1" bind:change="onChange"></wxc-select>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-select': '@minui/wxc-select'
+    }
+  },
+  data: {
+    items: [
+      {value: '1', title: '火箭'},
+      {value: '2', title: '勇士'},
+      {value: '3', title: '开拓者'},
+      {value: '4', title: '雷霆'},
+      {value: '5', title: '马刺'},
+    ]
+  },
+  methods: {
+    onChange(e) {
+      console.log(e.detail.value);
+    }
+  }
+}
+</script>
+
+<style>
+</style>

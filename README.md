@@ -74,6 +74,21 @@ PS：如想尝试修改源码，终端里先执行 `$ min dev`。这样任何的
 
 ### ○ 更新记录
 
+#### v2.0.0（2018.04.27）
+
+- 新增 button 组件
+- 新增 input 组件
+- 新增 list 组件
+- 新增 notice 组件
+- 新增 panel 组件
+- 新增 search 组件
+- 新增 select 组件
+- 新增 rate 组件
+- popup 组件文档补充，增加 locked 属性的说明
+- toast 组件 show() 方法增加 message 参数
+- tab 组件 panel 高度自适应
+- counter 组件加减操作符新增 color 属性
+
 #### v1.0.9（2018.01.09）
 
 - z-index 层级规范方案修改

@@ -5,8 +5,19 @@
       <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
     </view>
 
-    <view class="index-bd">
-      <wxc-example-menu menus="{{menus}}"></wxc-example-menu>
+    <view class="index-body" wx:for="{{menus}}" wx:key="id">
+      <view class="menu__title">{{item.name}}</view>
+      <view class="menu__body">
+        <wxc-list class="menu__item"
+                  wx:for="{{item.pages}}"
+                  wx:key="id"
+                  wx:for-index="i"
+                  wx:for-item="page"
+                  data-id="{{page.id}}"
+                  title="{{page.id + ' ' + page.name}}"
+                  mode="{{i == item.pages.length-1 ? 'none': ''}}"
+                  bindtap="navigate"></wxc-list>
+      </view>
     </view>
 
     <view class="index-ft">
@@ -23,11 +34,17 @@ let { menus } = config
 export default {
   config: {
     usingComponents: {
-      "wxc-example-menu": "@minui/wxc-example-menu"
+      "wxc-list": "@minui/wxc-list"
     }
   },
   data: {
     menus
+  },
+  navigate(e) {
+    let id = e.target.dataset.id;
+    wx.navigateTo({
+        url: `/pages/${id}/index`
+    });
   },
   onShareAppMessage: function () {
     return {
@@ -59,5 +76,19 @@ export default {
     color: #888;
     font-size: 26rpx;
     vertical-align: middle;
+  }
+  .index-body {
+    margin-bottom: 30rpx;
+  }
+  .menu__title {
+    height: 66rpx;
+    line-height: 66rpx;
+    margin-left: 30rpx;
+    font-size: 32rpx;
+    color: #666;
+  }
+  .menu__body {
+    background: #fff;
+    color: rgb(120, 182,252);
   }
 </style>

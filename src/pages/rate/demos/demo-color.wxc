@@ -1,0 +1,18 @@
+<template>
+  <wxc-rate value="4" color="#ff45a1" active-color="#ff45a1"></wxc-rate>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-rate': '@minui/wxc-rate'
+    }
+  },
+  data: { },
+  methods: { }
+}
+</script>
+
+<style>
+</style>

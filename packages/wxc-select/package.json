@@ -1,0 +1,19 @@
+{
+  "name": "@minui/wxc-select",
+  "version": "1.0.1",
+  "description": "select - 小程序组件",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meili/minui/tree/master/packages/wxc-select"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "minConfig": {
+    "component": true
+  }
+}

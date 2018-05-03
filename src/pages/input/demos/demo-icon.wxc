@@ -1,0 +1,27 @@
+<template>
+    <view class="input-wrap">
+        <wxc-input type="text"
+                   icon="search"
+                   placeholder="搜索从这里开始">
+        </wxc-input>
+    </view>
+</template>
+
+<script>
+    export default {
+        config: {
+            usingComponents: {
+                'wxc-input': '@minui/wxc-input'
+            }
+        },
+        data: { },
+        methods: { }
+    }
+</script>
+
+<style>
+    .input-wrap {
+        position: relative;
+        margin: 20rpx 10rpx 0 10rpx;
+    }
+</style>

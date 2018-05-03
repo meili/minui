@@ -25,7 +25,7 @@
       <demo-icon-color></demo-icon-color>
     </example-demo>
 
-    <example-demo title="调用show方法显示" desc="调用 show() 方法显示 toast">
+    <example-demo title="调用show方法显示" desc="调用 show(message) 方法显示 toast">
       <demo-show></demo-show>
     </example-demo>
   </example>

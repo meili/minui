@@ -1,5 +1,5 @@
 <template>
-  <wxc-counter number="5" max="{{5}}" min="1" bind:changenumber="onChangeNumber"></wxc-counter>
+  <wxc-counter number="5" max="{{5}}" min="1" color="#333" bind:changenumber="onChangeNumber"></wxc-counter>
 </template>
 
 <script>

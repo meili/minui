@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-icon",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "MinUI 小程序组件 - 图标",
   "main": "dist/index.js",
   "repository": {

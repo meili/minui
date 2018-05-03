@@ -1,0 +1,77 @@
+<template>
+  <view class="rate" bindtap="handlerRate">
+    <block wx:for="{{count}}" wx:key="index">
+      <wxc-icon class="rate__icon"
+                style="margin-right: {{padding}}rpx;"
+                type="{{ (value-1) >=index ? 'star-active' : 'star'}}"
+                size="{{size}}"
+                color="{{(value-1) >=index ? activeColor : color}}"
+                data-score="{{index+1}}"
+      ></wxc-icon>
+    </block>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [ ],
+  properties: {
+    value: {
+      type: Number,
+      value: 0
+    },
+    count: {
+      type: Number,
+      value: 5
+    },
+    size: {
+      type: [String, Number],
+      value: 44
+    },
+    color: {
+      type: String,
+      value: '#e5e5e5'
+    },
+    activeColor: {
+      type: String,
+      value: '#fdb757'
+    },
+    readonly: {
+      type: Boolean,
+      value: false
+    },
+    padding: {
+      type: Number,
+      value: 20
+    }
+  },
+  data: { },
+  methods: {
+    handlerRate(e) {
+      if (this.data.readonly) {
+        return;
+      }
+      let score = e.target.dataset.score;
+      if (score) {
+          this.setData({
+              value: score
+          });
+          let detail = e.detail;
+          detail.value = score;
+          let option = {};
+          this.triggerEvent('rate', detail, option);
+      }
+    }
+  }
+}
+
+
+</script>
+
+<style lang="pcss">
+</style>

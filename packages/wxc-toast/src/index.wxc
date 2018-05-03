@@ -65,11 +65,16 @@ export default {
     zIndex: 1000
   },
   methods: {
-    show() {
+    show(message) {
+      let text = this.data.text;
+      if (message && typeof message === 'string') {
+          text = message;
+      }
       let duration = this.data.duration
 
       clearTimeout(this._timer)
       this.setData({
+        text: text,
         isShow: true
       })
 

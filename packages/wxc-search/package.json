@@ -1,0 +1,19 @@
+{
+  "name": "@minui/wxc-search",
+  "version": "1.0.1",
+  "description": "搜索栏 - 小程序组件",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meili/minui/tree/master/packages/wxc-search"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "minConfig": {
+    "component": true
+  }
+}

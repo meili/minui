@@ -1,0 +1,50 @@
+<template>
+  <view class="search-wrap">
+    <view class="search-location">浙江</view>
+    <wxc-search class="search" radius="30" mode="static" placeholder="iphoneX"></wxc-search>
+    <wxc-icon class="search-icon" type="message" size="44" color="#fff"></wxc-icon>
+  </view>
+
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon',
+      'wxc-search': '@minui/wxc-search'
+    }
+  },
+  data: { },
+  methods: { }
+}
+</script>
+
+<style>
+  .search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    color: #fff;
+    background: #fb4747;
+    border-bottom: 1px solid #fb4747;
+  }
+  .search-location {
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 22rpx;
+    font-size: 26rpx;
+    overflow: hidden;
+  }
+  .search {
+    flex-grow: 1;
+    margin: 15rpx 24rpx;
+  }
+  .search-icon {
+    width: 44rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-right: 22rpx;
+  }
+</style>

@@ -1,0 +1,31 @@
+<template>
+  <view class="container">
+    <view class="input-wrap">
+      <wxc-input type="text" title="收货人" placeholder="名字"></wxc-input>
+      <wxc-input type="number" title="联系电话" placeholder="请输入手机号"></wxc-input>
+      <wxc-input type="text" title="详细地址" mode="none" placeholder="请输入详细地址"></wxc-input>
+    </view>
+  </view>
+
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-input': '@minui/wxc-input'
+    }
+  },
+  data: { },
+  methods: { }
+}
+</script>
+
+<style>
+  .container {
+    width: 100%;
+  }
+  .input-wrap {
+    background: #fff;
+  }
+</style>

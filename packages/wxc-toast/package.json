@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-toast",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "MinUI 小程序组件 - 提示框",
   "main": "dist/index.js",
   "repository": {
@@ -10,7 +10,7 @@
   "author": "Min Team",
   "license": "MIT",
   "dependencies": {
-    "@minui/wxc-icon": "1.0.8"
+    "@minui/wxc-icon": "^1.0.9"
   },
   "publishConfig": {
     "access": "public"

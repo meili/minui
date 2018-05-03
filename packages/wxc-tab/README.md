@@ -53,6 +53,9 @@ $ min install @minui/wxc-tab
 
 ##  ChangeLog
 
+#### v1.0.5（2018.04.27）
+- panel 高度自适应
+
 #### v1.0.4（2018.02.09）
 - 新增 full-screen 属性
 

@@ -1,0 +1,19 @@
+{
+  "name": "@minui/wxc-list",
+  "version": "1.0.1",
+  "description": "列表组件 - 小程序组件",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meili/minui/tree/master/packages/wxc-list"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "minConfig": {
+    "component": true
+  }
+}

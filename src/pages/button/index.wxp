@@ -1,0 +1,24 @@
+<template>
+  <example title="button" desc="按钮">
+    <example-demo title="按钮示例" desc="">
+      <demo-default></demo-default>
+    </example-demo>
+  </example>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'example': '@minui/wxc-example',
+      'example-demo': '@minui/wxc-example-demo',
+      'example-md': '@minui/wxc-example-md',
+      'demo-default': './demos/demo-default'
+    }
+  },
+  data: { }
+}
+</script>
+
+<style>
+</style>

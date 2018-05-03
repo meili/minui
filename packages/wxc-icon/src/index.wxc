@@ -30,7 +30,7 @@
 <style>
   @font-face {
     font-family: 'min-icon';
-    src: url('https://s10.mogucdn.com/mlcdn/c45406/170928_1h5992g4hi7giefg93h9ffjfdh98e.ttf') format('truetype');
+    src: url('https://s10.mogucdn.com/mlcdn/c45406/180410_33hdc107f9a74c5545ha14cbil4ci.ttf') format('truetype');
   }
   .icon {
     display: inline;
@@ -40,6 +40,9 @@
     -webkit-text-stroke-width: 0.2px;
   }
 
+  .icon--clear:before {
+    content: "\e635";
+  }
   .icon--no:before {
     content: "\e695";
   }
