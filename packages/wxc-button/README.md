@@ -33,15 +33,23 @@ $ min install @minui/wxc-button
 |`send-message-path`   | [说明]：同微信小程序 `button` 组件。会话内消息卡片点击跳转小程序路径<br>[类型]：`String`<br>[默认值]：当前分享路径<br>|
 |`send-message-img`    | [说明]：同微信小程序 `button` 组件。会话内消息卡片图片<br>[类型]：`String`<br>[默认值]：截图<br>|
 |`show-message-card`   | [说明]：同微信小程序 `button` 组件。显示会话内消息卡片<br>[类型]：`Boolean`<br>[默认值]：`false`<br>|
-|`bindtap`             | [说明]：同微信小程序 `button` 组件。按钮点击事件<br>[类型]：`Handler`<br>|
+|`bind:click`          | [说明]：同微信小程序 `button` 组件。按钮点击事件，bind:tap已废弃，请升级组件。<br>[类型]：`Handler`<br>|
 |`bindgetuserinfo`     | [说明]：同微信小程序 `button` 组件。用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同 `wx.getUserInfo`<br>[类型]：`Handler`<br>|
 |`bindcontact`         | [说明]：同微信小程序 `button` 组件。客服消息回调<br>[类型]：`Handler`<br>|
 |`bindgetphonenumber`  | [说明]：同微信小程序 `button` 组件。获取用户手机号回调<br>[类型]：`Handler`<br>|
 |`binderrror`          | [说明]：同微信小程序 `button` 组件。当使用开放能力时，发生错误的回调调<br>[类型]：`Handler`<br>|
 |`bind:submit`         | [说明]：`button` 组件 `form-type` 设置为 `submit`, 内置 `form` 表单，点击按钮时触发 `submit` 事件，可用于获取 `formId` 等，`event.detail = {value, formId}`|
 			
+## Note
+
+> - 小程序组件系统中组件是隔离的，组件外层套 `form` 标签时两者是不通的，现在组件中内置 `form` 标签用于获取 `formId`。
+> - 小程序组件系统中组件是隔离的，所以提交表单时无法用 `form` 表单获取输入框中的值，只能单独获取。
 
 ## ChangeLog
+
+#### v1.0.1（2018-6-5）
+
+- `wxc-button` 点击事件名由 `bind:tap` 更名为 `bind:click`。
 
 #### v1.0.0（2018-02-26）
 

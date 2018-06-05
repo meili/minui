@@ -22,10 +22,12 @@ $ min install @minui/wxc-rate
 |`active-color`        | [说明]：选中颜色值。<br>[类型]：`String`<br>[默认值]：`#fdb757` <br>|
 |`padding`             | [说明]：两颗星星间的距离。<br>[类型]：`Number`<br>[默认值]：`20` <br>|
 |`readonly`            | [说明]：是否只读。<br>[类型]：`Boolean`<br>[默认值]：`false` <br>|
-|`prop-name`           | 描述属性的类型，默认值等         |
-|`method-name`         | 描述方法的参数，返回值等         |
+|`bind:rate`           | [说明]：评分点击事件，event.detail = {value: value}。|
 
 ## ChangeLog
+
+#### v1.0.1（2018-6-5）
+- 补充文档，增加 `rate` 点击事件说明
 
 #### v1.0.0（2018-4-23）
 

@@ -33,6 +33,7 @@ export default {
       {title: '选项三', content: '内容三'}
     ]
   },
+  /** note: 在 wxp 文件或者页面文件中请去掉 methods 包装 */
   methods: {
     onClick: function(e) {
       console.log(`ComponentId:${e.detail.componentId},you selected:${e.detail.key}`);

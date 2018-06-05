@@ -11,7 +11,7 @@
 
     <example-demo title="换行选项" desc="如果一条轴线排不下，如何换行">
       <demo-wrap></demo-wrap>
-    </example-demo>dir
+    </example-demo>
 
     <example-demo title="交叉轴排列" desc="项目在交叉轴上如何对齐">
       <demo-cross></demo-cross>

@@ -42,6 +42,10 @@ $ min install @minui/wxc-input
 |`bind:blur`           | [说明]：输入框失去焦点时触发，event.detail = {value: value}|
 |`bind:confirm`        | [说明]：点击完成按钮时触发，event.detail = {value: value}|
 
+## Note
+
+> 小程序组件系统中组件是隔离的，所以提交表单时无法用 `form` 表单获取输入框中的值，只能单独获取。
+
 ## ChangeLog
 
 #### v1.0.0（2018-3-29）
