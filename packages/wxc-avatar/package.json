@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-avatar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MinUI 小程序组件 - 头像",
   "main": "dist/index.js",
   "scripts": {},
@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@minui/wxc-badge": "1.0.5",
-    "@minui/wxc-cc": "1.0.3"
+    "@minui/wxc-cc": "1.0.4"
   },
   "minConfig": {
     "component": true

@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-flex",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "MinUI 小程序组件 - flex",
   "main": "dist/index.js",
   "repository": {

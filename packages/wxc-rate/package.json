@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-rate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "评价 - 小程序组件",
   "main": "dist/index.js",
   "scripts": {},
