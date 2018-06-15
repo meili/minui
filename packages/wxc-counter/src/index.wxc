@@ -29,27 +29,33 @@ export default {
       type: [Number, String],
       value: 0,
       observer: function (newVal) {
-        this.setData({
-          number: parseInt(newVal, 10)
-        })
+        if(this.data.number != newVal){
+          this.setData({
+            number: parseInt(newVal, 10)
+          })
+        }
       }
     },
     max: {
       type: [Number, String],
       value: 1,
       observer: function (newVal) {
-        this.setData({
-          max: parseInt(newVal, 10)
-        })
+        if(this.data.max != newVal){
+          this.setData({
+            max: parseInt(newVal, 10)
+          })
+        }
       }
     },
     min: {
       type: [Number, String],
       value: 0,
       observer: function (newVal) {
-        this.setData({
-          min: parseInt(newVal, 10)
-        })
+        if(this.data.min != newVal){
+          this.setData({
+            min: parseInt(newVal, 10)
+          })
+        }
       }
     },
     disabled: {
