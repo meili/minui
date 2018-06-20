@@ -1,12 +1,12 @@
 {
-  "name": "@minui/wxc-input-plus",
-  "version": "1.0.6",
+  "name": "wxc-input-plus",
+  "version": "1.0.7",
   "description": "输入组件增强 - 小程序组件",
   "main": "dist/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/meili/minui/tree/master/packages/wxc-input-plus"
+    "url": "https://github.com/zenofzhen/minui/tree/master/packages/wxc-input-plus"
   },
   "author": "",
   "license": "MIT",
