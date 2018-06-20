@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-input-plus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "输入组件增强 - 小程序组件",
   "main": "dist/index.js",
   "scripts": {},
