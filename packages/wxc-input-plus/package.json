@@ -1,6 +1,6 @@
 {
-  "name": "wxc-input-plus",
-  "version": "1.0.5",
+  "name": "@minui/wxc-input-plus",
+  "version": "1.0.6",
   "description": "输入组件增强 - 小程序组件",
   "main": "dist/index.js",
   "scripts": {},
@@ -8,8 +8,11 @@
     "type": "git",
     "url": "https://github.com/meili/minui/tree/master/packages/wxc-input-plus"
   },
-  "author": "algforce",
+  "author": "",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "minConfig": {
     "component": true
   }
