@@ -40,7 +40,7 @@ $ min install wxc-input-plus
 |`start`     | [说明]：Time，Date类型开始结束区间中开始。<br>[类型]：`String`<br>[默认值]：`""` <br>|
 |`end`     | [说明]：Time，Date类型开始结束区间中结束。<br>[类型]：`String`<br>[默认值]：`""` <br>|
 |`bind:input`          | [说明]：当键盘输入时，触发input事件，event.detail = {value, cursor}，处理函数可以直接 return 一个字符串，将替换输入框的内容。|
-|`bind:focus`          | [说明]：输入框聚焦时触发，event.detail = { value, height }，height 参数在基础库 1.9.90 起支持         |
+|`bind:focus`          | [说明]：输入框聚焦时触发，event.detail = { value, height }，height 参数在基础库 1.9.90 起支持          |
 |`bind:blur`           | [说明]：输入框失去焦点时触发，event.detail = {value: value}|
 |`bind:confirm`        | [说明]：点击完成按钮时触发，event.detail = {value: value}|
 
