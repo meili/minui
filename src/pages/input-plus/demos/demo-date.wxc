@@ -1,0 +1,27 @@
+<template>
+  <view class="container">
+  <wxc-input-plus type="date" title="日期选择" placeholder="输入日期" ></wxc-input-plus>
+   <wxc-input-plus type="date" title="日期选择"  value="2018-05-01" placeholder="输入日期" start="2018-06-15" end="2018-07-15"></wxc-input-plus>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-input-plus': 'wxc-input-plus'
+    }
+  },
+  data: {},
+  methods: {}
+}
+</script>
+
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>
