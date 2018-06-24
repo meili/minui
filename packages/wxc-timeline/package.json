@@ -1,6 +1,6 @@
 {
   "name": "wxc-timeline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "时间线 - 小程序组件",
   "main": "dist/index.js",
   "scripts": {},
