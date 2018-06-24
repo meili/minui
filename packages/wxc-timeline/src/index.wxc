@@ -1,0 +1,107 @@
+
+<style lang="less">
+.tl-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tl-list-panel {
+  display: flex;
+  flex-direction: column;
+}
+.tl-list {
+  display: flex;
+  flex-direction: row;
+}
+.tl-date {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+}
+.tl-content-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.tl-content {
+  display: flex;
+  flex-direction: row;
+}
+.tl-image-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.tl-image {
+  width: 120rpx;
+  height: 120rpx;
+  padding: 20rpx;
+}
+.tl-word-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.tl-year-word {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 80rpx;
+}
+.tl-date-word {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.tl-month-word {
+  font-size: 0.8em;
+}
+.tl-content-word {
+  font-size: 0.8em;
+}
+.tl-content-span {
+  color: #ff4500;
+  font-weight: bold;
+}
+</style>
+<template>
+  <view class="tl-container">
+    <view class="tl-list-panel" wx:for="{{timelines}}" wx:for-item="timeline">
+      <lable class="tl-year-word" wx:if="{{timeline.showYear}}">{{timeline.year}}年</lable>
+      <view class="tl-list">
+        <view class="tl-date">
+          <lable class="tl-date-word">{{timeline.date}}</lable>
+          <lable class="tl-month-word">{{timeline.month}}月</lable>
+        </view>
+        <view class="tl-content-list" >
+          <view class="tl-content" wx:for="{{timeline.contents}}"  wx:for-item="content">
+            <view class="tl-image-view">
+              <image class="tl-image" mode="aspectFill" src="{{content.gameUrl}}"/>
+            </view>
+            <view class="tl-word-view">
+              <lable class="tl-content-word">{{content.babyName}}和{{content.relationName}}打卡了<span class="tl-content-span">「{{content.gameName}}」</span>游戏，提升了宝贝的{{content.memo}}。{{content.babyName}}的天赋值又增加了{{content.talentScore}}点哦！</lable>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>  
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {}
+  },
+  behaviors: [],
+  properties: {
+    timelines: {
+      type: Array,
+      value: []
+    }
+  },
+  data: {},
+  methods: {},
+  attached() { }
+}
+</script>

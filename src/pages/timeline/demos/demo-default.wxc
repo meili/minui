@@ -1,0 +1,65 @@
+<template>
+  <wxc-timeline timelines="{{timelines}}"></wxc-timeline>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-timeline': 'wxc-timeline'
+    }
+  },
+  data: {
+    timelines: [{
+      year: '2018',
+      date: '24',
+      month: '6',
+      contents: [{
+        gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+        content: '乎乎',
+        relationName: '奶奶',
+        gameName: '魔法舞会',
+        talentScore: '20',
+        memo: '运动力，控制力和乐感'
+      }
+      ]
+    },
+    {
+      year: '2017',
+      showYear: true,
+      date: '23',
+      month: '6',
+      contents: [{
+        gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+        babyName: '乎乎',
+        relationName: '奶奶',
+        gameName: '魔法舞会',
+        talentScore: '20',
+        memo: '运动力，控制力和乐感'
+      },
+      {
+        gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+        babyName: '乎乎',
+        relationName: '妈妈',
+        gameName: '魔法舞会',
+        talentScore: '10',
+        memo: '运动力，控制力和乐感'
+      },
+      {
+        gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+        babyName: '乎乎',
+        relationName: '爸爸',
+        gameName: '魔法舞会',
+        talentScore: '30',
+        memo: '运动力，控制力和乐感'
+      }
+      ]
+    }
+    ]
+  },
+  methods: {}
+}
+</script>
+
+<style>
+</style>
