@@ -5,7 +5,7 @@
 ## Install
 
 ``` bash
-$ min install @minui/wxc-list-plus
+$ min install wxc-list-plus
 ```
 
 

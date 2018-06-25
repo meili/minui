@@ -5,7 +5,7 @@
 ## Install
 
 ``` bash
-$ min install @minui/wxc-timeline
+$ min install wxc-timeline
 ```
 
 
