@@ -1,0 +1,86 @@
+<template>
+  <wxc-list-plus games="{{games}}" direction="row" bindclick="onClick"></wxc-list-plus>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-list-plus': '@minui/wxc-list-plus'
+    }
+  },
+  data: { 
+    games:[{
+      id:1,
+      title:'魔法舞会',
+      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount:521,
+      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      tags:[{
+        name:'运动',
+        color: '#6A5ACD'
+      },
+      {
+        name:'艺术',
+        color: '#EEDC82'
+      },
+      {
+        name:'认知',
+        color: '#EE6363'
+      }
+      ]
+    }
+    ,
+    {
+      id:2,
+      title:'魔法舞会',
+      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount:521,
+      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      tags:[{
+        name:'运动',
+        color: '#6A5ACD'
+      },
+      {
+        name:'艺术',
+        color: '#EEDC82'
+      },
+      {
+        name:'认知',
+        color: '#EE6363'
+      }
+      ]
+    },
+    {
+      id:3,
+      title:'魔法舞会',
+      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount:521,
+      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      tags:[{
+        name:'运动',
+        color: '#6A5ACD'
+      },
+      {
+        name:'艺术',
+        color: '#EEDC82'
+      },
+      {
+        name:'认知',
+        color: '#EE6363'
+      }
+      ]
+    }
+    ]
+  },
+  methods: {
+   onClick(event) {
+     console.info(event)
+    }
+   }
+}
+</script>
+
+<style>
+</style>
+ 
