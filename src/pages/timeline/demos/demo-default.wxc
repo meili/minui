@@ -1,5 +1,5 @@
 <template>
-  <wxc-timeline timelines="{{timelines}}"></wxc-timeline>
+  <wxc-timeline timelines="{{timelines}}" bindclick="onClick"></wxc-timeline>
 </template>
 
 <script>
@@ -15,6 +15,7 @@ export default {
       date: '24',
       month: '6',
       contents: [{
+        id:1,
         gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
         content: '乎乎',
         relationName: '奶奶',
@@ -30,6 +31,7 @@ export default {
       date: '23',
       month: '6',
       contents: [{
+        id:2,
         gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
         babyName: '乎乎',
         relationName: '奶奶',
@@ -38,6 +40,7 @@ export default {
         memo: '运动力，控制力和乐感'
       },
       {
+        id:3,
         gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
         babyName: '乎乎',
         relationName: '妈妈',
@@ -46,6 +49,7 @@ export default {
         memo: '运动力，控制力和乐感'
       },
       {
+        id:4,
         gameUrl: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
         babyName: '乎乎',
         relationName: '爸爸',
@@ -57,7 +61,11 @@ export default {
     }
     ]
   },
-  methods: {}
+  methods: {
+    onClick(event) {
+     console.info(event)
+    }
+  }
 }
 </script>
 

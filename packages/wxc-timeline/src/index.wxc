@@ -74,7 +74,7 @@
           <lable class="tl-month-word">{{timeline.month}}月</lable>
         </view>
         <view class="tl-content-list" >
-          <view class="tl-content" wx:for="{{timeline.contents}}"  wx:for-item="content">
+          <view class="tl-content" wx:for="{{timeline.contents}}"  wx:for-item="content" data-id="{{content.id}}" bindtap="onClick" >
             <view class="tl-image-view">
               <image class="tl-image" mode="aspectFill" src="{{content.gameUrl}}"/>
             </view>
@@ -101,7 +101,13 @@ export default {
     }
   },
   data: {},
-  methods: {},
+  methods: {
+    onClick(event) {
+      let detail = event.currentTarget.dataset.id;
+      let option = {};
+      this.triggerEvent('click', detail, option);
+    }
+  },
   attached() { }
 }
 </script>
