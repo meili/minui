@@ -123,7 +123,7 @@
 <template>
   <view>
     <view  class="lp-container" wx:if="{{direction=='column'}}">
-      <view class="lp-list-item"  wx:for="{{games}}" wx:for-item="game" data-id="{{game.id}}" bindtap="onClick">
+      <view class="lp-list-item"  wx:for="{{games}}" wx:for-item="game" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img">
           <image class="lp-list-image" mode="aspectFill" src="{{game.url}}"/>
         </view>
@@ -143,7 +143,7 @@
     </view>
     
     <view  class="lp-container-row" wx:if="{{direction=='row'}}">
-      <view class="lp-list-item-row"  wx:for="{{games}}" wx:for-item="game" data-id="{{game.id}}" bindtap="onClick">
+      <view class="lp-list-item-row"  wx:for="{{games}}" wx:for-item="game" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img-row">
           <image class="lp-list-image-row" mode="aspectFill" src="{{game.url}}"/>
         </view>
@@ -179,7 +179,7 @@ export default {
   data: {},
   methods: {
     onClick(event) {
-      let detail = event.currentTarget.dataset.id;
+      let detail = event.currentTarget.dataset.game;
       let option = {};
       this.triggerEvent('click', detail, option);
     }
