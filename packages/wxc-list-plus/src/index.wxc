@@ -136,7 +136,7 @@
               <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
             </view>
             <view class="lp-content-desc">
-              <lable class="lp-content-desc-word" >{{game.desc}}</lable>
+              <wxc-elip line="3" class="lp-content-desc-word" >{{game.desc}}</wxc-elip>
             </view>
         </view>
       </view>
@@ -162,7 +162,8 @@
 export default {
   config: {
     usingComponents: {
-      'wxc-label': '@minui/wxc-label'
+      'wxc-label': '@minui/wxc-label',
+      'wxc-elip': '@minui/wxc-elip'
     }
   },
   behaviors: [],
