@@ -185,6 +185,7 @@ export default {
       let detail = event.currentTarget.dataset.game;
       let option = {};
       this.triggerEvent('click', detail, option);
+      console.info('123')
     }
   }
 }
