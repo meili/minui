@@ -1,5 +1,5 @@
 <template>
-  <wxc-list-plus games="{{games}}" direction="row" bindclick="onClick"></wxc-list-plus>
+  <wxc-list-plus games="{{games}}" bindclick="onClick"></wxc-list-plus>
 </template>
 
 <script>
@@ -16,6 +16,7 @@ export default {
       url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
       playCount:521,
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType:'1-6',
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -37,6 +38,7 @@ export default {
       url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
       playCount:521,
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType:'1-6',
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -44,10 +46,6 @@ export default {
       {
         name:'艺术',
         color: '#EEDC82'
-      },
-      {
-        name:'认知',
-        color: '#EE6363'
       }
       ]
     },
@@ -57,6 +55,7 @@ export default {
       url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
       playCount:521,
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType:'1-6',
       tags:[{
         name:'运动',
         color: '#6A5ACD'
