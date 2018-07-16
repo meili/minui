@@ -26,7 +26,6 @@
   border-radius: 20rpx;
   background: white;
   margin: 10rpx;
-  padding: 10rpx;
 }
 .lp-list-img {
   flex: 0;

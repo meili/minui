@@ -1,5 +1,5 @@
 <template>
-  <wxc-list-plus games="{{games}}" bindclick="onClick"></wxc-list-plus>
+  <wxc-list-plus games="{{games}}" direction="row" bindclick="onClick"></wxc-list-plus>
 </template>
 
 <script>
