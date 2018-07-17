@@ -5,8 +5,12 @@
   flex-direction: column;
 }
 .lp-container-row {
-  display: flex;
-  flex-direction: row;
+  display:flex;
+  flex-direction:row;
+  margin:10rpx;
+  height:180px;
+  justify-content:center;
+  align-items:center;
 }
 .lp-list-item {
   display: flex;
@@ -25,7 +29,9 @@
   align-items: center;
   border-radius: 20rpx;
   background: white;
-  margin: 10rpx;
+  margin: 5rpx;
+  padding:5rpx;
+  height:150px;
 }
 .lp-list-img {
   flex: 0;
