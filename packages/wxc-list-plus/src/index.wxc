@@ -78,7 +78,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
 }
 .lp-content-type-row {
@@ -94,10 +94,17 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   margin-top: 10rpx;
-  height: 90rpx;
+}
+.lp-content-year {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 .lp-content-title-word {
   font-size: 1.2em;
@@ -111,6 +118,11 @@
 .lp-content-type-word {
   font-size: 1em;
   margin-right: 20rpx;
+}
+.lp-content-type-word-desc {
+  font-size: 1em;
+  margin-right: 20rpx;
+  color:gray;
 }
 .lp-content-type-word-row {
   font-size: 0.8em;
@@ -133,11 +145,14 @@
               <lable class="lp-content-title-word">{{game.title}}</lable>
               <lable class="lp-content-count-word">{{game.playCount}}个宝贝玩过</lable>
             </view>
-            <view class="lp-content-type">
-              <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
+            <view class="lp-content-year">
+              <wxc-label class="lp-content-type-word" type="fill" type-color="#87CEFA">{{game.childrenType}}岁+</wxc-label>
             </view>
             <view class="lp-content-desc">
-              <wxc-label class="lp-content-type-word" type="fill" type-color="#1E90FF">{{game.childrenType}}岁+</wxc-label>
+              <label class="lp-content-type-word-desc">{{game.summary}}</label>
+            </view>
+            <view class="lp-content-type">
+              <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
             </view>
         </view>
       </view>
