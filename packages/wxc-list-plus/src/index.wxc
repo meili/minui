@@ -5,12 +5,12 @@
   flex-direction: column;
 }
 .lp-container-row {
-  display:flex;
-  flex-direction:row;
-  margin:10rpx;
-  height:360rpx;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  height: 360rpx;
+  justify-content: center;
+  align-items: center;
 }
 .lp-list-item {
   display: flex;
@@ -30,8 +30,8 @@
   border-radius: 20rpx;
   background: white;
   margin: 5rpx;
-  padding:5rpx;
-  height:300rpx;
+  padding: 5rpx;
+  height: 300rpx;
 }
 .lp-list-img {
   flex: 0;
@@ -62,7 +62,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 10rpx;
-  margin-top:10rpx;
+  margin-top: 10rpx;
 }
 .lp-content-header {
   flex: 1;
@@ -112,6 +112,14 @@
   align-items: center;
   width: 100%;
 }
+.lp-content-price {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
 .lp-content-title-word {
   font-size: 1em;
 }
@@ -128,7 +136,7 @@
 .lp-content-type-word-desc {
   font-size: 0.7em;
   margin-right: 20rpx;
-  color:gray;
+  color: gray;
 }
 .lp-content-type-word-row {
   font-size: 0.8em;
@@ -136,6 +144,16 @@
 }
 .lp-content-desc-word {
   font-size: 0.8em;
+}
+.old-price {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.price {
+  margin-left: 10rpx;
+  font-size: 36rpx;
+  /* font-weight: bold; */
+  color: #ff4422;
 }
 </style>
 
@@ -159,6 +177,11 @@
             </view>
             <view class="lp-content-type">
               <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
+            </view>
+            <view class="lp-content-price">
+              <wxc-price class="old-price" status="del" del-color="#666">{{game.oldPrice}}</wxc-price>
+              <wxc-price class="price" wx:if="{{game.price>0}}" value="{{game.price}}" decimal="small"></wxc-price>
+              <lable class="price" wx:else>限免</lable>
             </view>
         </view>
       </view>
@@ -185,7 +208,8 @@ export default {
   config: {
     usingComponents: {
       'wxc-label': '@minui/wxc-label',
-      'wxc-elip': '@minui/wxc-elip'
+      'wxc-elip': '@minui/wxc-elip',
+      'wxc-price': '@minui/wxc-price'
     }
   },
   behaviors: [],

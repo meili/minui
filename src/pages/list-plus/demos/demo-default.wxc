@@ -18,6 +18,8 @@ export default {
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType:'1-6',
       summary:'用音乐让宝贝动起来',
+      oldPrice:19.99,
+      price:0,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -41,6 +43,8 @@ export default {
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType:'1-6',
       summary:'音乐响起宝贝和奶奶',
+      oldPrice:19.99,
+      price:1,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -59,6 +63,8 @@ export default {
       desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType:'1-6',
       summary:'音乐响起宝贝和奶奶',
+      oldPrice:19.99,
+      price:0,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
