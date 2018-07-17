@@ -94,7 +94,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   margin-top: 10rpx;
 }
@@ -107,20 +107,20 @@
   width: 100%;
 }
 .lp-content-title-word {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .lp-content-title-word-row {
   font-size: 1em;
 }
 .lp-content-count-word {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .lp-content-type-word {
   font-size: 1em;
   margin-right: 20rpx;
 }
 .lp-content-type-word-desc {
-  font-size: 1em;
+  font-size: 0.7em;
   margin-right: 20rpx;
   color:gray;
 }
