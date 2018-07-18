@@ -178,7 +178,7 @@
             <view class="lp-content-type">
               <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
             </view>
-            <view class="lp-content-price">
+            <view class="lp-content-price"  wx:if="{{!hiddenPrice}}">
               <wxc-price class="old-price" status="del" del-color="#666">{{game.oldPrice}}</wxc-price>
               <wxc-price class="price" wx:if="{{game.price>0}}" value="{{game.price}}" decimal="small"></wxc-price>
               <lable class="price" wx:else>限免</lable>
@@ -214,6 +214,10 @@ export default {
   },
   behaviors: [],
   properties: {
+    hiddenPrice: {
+      type: Boolean,
+      value: true
+    },
     direction: {
       type: String,
       value: 'column'
