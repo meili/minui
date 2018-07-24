@@ -46,6 +46,13 @@
   justify-content: center;
   align-items: center;
 }
+.lp-list-image-new {
+  position: absolute;
+  width: 75rpx;
+  height: 69.5rpx;
+  margin-top: -100rpx;
+  margin-left: -100rpx;
+}
 .lp-list-image {
   width: 200rpx;
   height: 200rpx;
@@ -136,7 +143,6 @@
 .lp-content-type-word-desc {
   font-size: 0.7em;
   margin-right: 20rpx;
-  color: gray;
 }
 .lp-content-type-word-row {
   font-size: 0.8em;
@@ -162,7 +168,8 @@
     <view  class="lp-container" wx:if="{{direction=='column'}}">
       <view class="lp-list-item"  wx:for="{{games}}" wx:for-item="game" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img">
-          <image class="lp-list-image" mode="aspectFill" src="{{game.url}}"/>
+          <image animation="{{animationData}}" class="lp-list-image-new" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new.png" ></image>
+          <image class="lp-list-image" mode="aspectFill" src="{{game.url}}" ></image>
         </view>
         <view class="lp-list-content">
             <view class="lp-content-header">
@@ -225,9 +232,32 @@ export default {
     games: {
       type: Array,
       value: []
+    },
+    animationData: {
+      type: Object,
+      value: {}
     }
   },
-  data: {},
+  data: {
+    animationData: {}
+  },
+  ready: function () {
+    var animation = wx.createAnimation({
+      duration: 600,
+      timingFunction: 'linear'
+    })
+    var i = 0.1
+    var s = 1
+    setInterval(() => {
+      s += i
+      animation.scale(s, s).step()
+      this.setData({
+         animationData : animation.export()
+      })
+     
+      i *= -1
+    }, 600)
+  },
   methods: {
     onClick(event) {
       let detail = event.currentTarget.dataset.game;

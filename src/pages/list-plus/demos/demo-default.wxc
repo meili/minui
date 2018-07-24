@@ -20,6 +20,7 @@ export default {
       summary:'用音乐让宝贝动起来',
       oldPrice:19.99,
       price:0,
+      new:false,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -45,6 +46,7 @@ export default {
       summary:'音乐响起宝贝和奶奶',
       oldPrice:19.99,
       price:1,
+      new:true,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
@@ -65,6 +67,7 @@ export default {
       summary:'音乐响起宝贝和奶奶',
       oldPrice:19.99,
       price:0,
+      new:false,
       tags:[{
         name:'运动',
         color: '#6A5ACD'
