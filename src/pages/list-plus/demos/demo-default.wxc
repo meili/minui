@@ -1,5 +1,5 @@
 <template>
-  <wxc-list-plus games="{{games}}" direction="row"  bindclick="onClick"></wxc-list-plus>
+  <wxc-list-plus games="{{games}}" animation="{{animationData}}" direction="row"  bindclick="onClick"></wxc-list-plus>
 </template>
 
 <script>
@@ -9,86 +9,104 @@ export default {
       'wxc-list-plus': '@minui/wxc-list-plus'
     }
   },
-  data: { 
-    games:[{
-      id:1,
-      title:'魔法舞会',
-      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
-      playCount:521,
-      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
-      childrenType:'1-6',
-      summary:'用音乐让宝贝动起来',
-      oldPrice:19.99,
-      price:0,
-      new:false,
-      tags:[{
-        name:'运动',
+  data: {
+    animationData: {},
+    games: [{
+      id: 1,
+      title: '魔法舞会',
+      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount: 521,
+      desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType: '1-6',
+      summary: '用音乐让宝贝动起来',
+      oldPrice: 19.99,
+      price: 0,
+      new: false,
+      tags: [{
+        name: '运动',
         color: '#6A5ACD'
       },
       {
-        name:'艺术',
+        name: '艺术',
         color: '#EEDC82'
       },
       {
-        name:'认知',
+        name: '认知',
         color: '#EE6363'
       }
       ]
     }
-    ,
+      ,
     {
-      id:2,
-      title:'魔法舞会',
-      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
-      playCount:521,
-      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
-      childrenType:'1-6',
-      summary:'音乐响起宝贝和奶奶',
-      oldPrice:19.99,
-      price:1,
-      new:true,
-      tags:[{
-        name:'运动',
+      id: 2,
+      title: '魔法舞会',
+      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount: 521,
+      desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType: '1-6',
+      summary: '音乐响起宝贝和奶奶',
+      oldPrice: 19.99,
+      price: 1,
+      new: true,
+      tags: [{
+        name: '运动',
         color: '#6A5ACD'
       },
       {
-        name:'艺术',
+        name: '艺术',
         color: '#EEDC82'
       }
       ]
     },
     {
-      id:3,
-      title:'魔法舞会',
-      url:'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
-      playCount:521,
-      desc:'音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
-      childrenType:'1-6',
-      summary:'音乐响起宝贝和奶奶',
-      oldPrice:19.99,
-      price:0,
-      new:false,
-      tags:[{
-        name:'运动',
+      id: 3,
+      title: '魔法舞会',
+      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      playCount: 521,
+      desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
+      childrenType: '1-6',
+      summary: '音乐响起宝贝和奶奶',
+      oldPrice: 19.99,
+      price: 0,
+      new: false,
+      tags: [{
+        name: '运动',
         color: '#6A5ACD'
       },
       {
-        name:'艺术',
+        name: '艺术',
         color: '#EEDC82'
       },
       {
-        name:'认知',
+        name: '认知',
         color: '#EE6363'
       }
       ]
     }
     ]
   },
+  ready() {
+    var animation = wx.createAnimation({
+      duration: 600,
+      timingFunction: 'linear'
+    })
+    var i = 0.1
+    var s = 1
+    setInterval(() => {
+      s += i
+      animation.scale(s, s).step()
+      this.setData({
+        animationData: animation.export()
+      })
+
+      i *= -1
+    }, 600)
+  },
   methods: {
-   onClick(event) {
-     console.info(event)
+    onClick(event) {
+      console.info(event)
     }
-   }
+  }
 }
 </script>
 

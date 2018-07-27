@@ -204,7 +204,7 @@
     <view  class="lp-container-row" wx:if="{{direction=='row'}}">
       <view class="lp-list-item-row"  wx:for="{{games}}" wx:for-item="game" wx:key="games" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img-row">
-          <image animation="{{animationData}}" class="lp-list-image-new-row" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new.png" ></image>
+          <image animation="{{animation}}" class="lp-list-image-new-row" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new.png" ></image>
           <image class="lp-list-image-row" mode="aspectFill" src="{{game.url}}"/>
         </view>
         <view class="lp-content-header-row">
@@ -241,30 +241,12 @@ export default {
       type: Array,
       value: []
     },
-    animationData: {
+    animation: {
       type: Object,
       value: {}
     }
   },
   data: {
-    animationData: {}
-  },
-  ready: function () {
-    var animation = wx.createAnimation({
-      duration: 600,
-      timingFunction: 'linear'
-    })
-    var i = 0.1
-    var s = 1
-    setInterval(() => {
-      s += i
-      animation.scale(s, s).step()
-      this.setData({
-         animationData : animation.export()
-      })
-     
-      i *= -1
-    }, 600)
   },
   methods: {
     onClick(event) {
