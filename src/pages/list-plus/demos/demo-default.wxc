@@ -22,6 +22,7 @@ export default {
       oldPrice: 19.99,
       price: 0,
       new: false,
+      dataUpdate:true,
       tags: [{
         name: '运动',
         color: '#6A5ACD'
@@ -48,6 +49,7 @@ export default {
       oldPrice: 19.99,
       price: 1,
       new: true,
+      dataUpdate:false,
       tags: [{
         name: '运动',
         color: '#6A5ACD'
@@ -69,6 +71,7 @@ export default {
       oldPrice: 19.99,
       price: 0,
       new: false,
+      dataUpdate:true,
       tags: [{
         name: '运动',
         color: '#6A5ACD'
