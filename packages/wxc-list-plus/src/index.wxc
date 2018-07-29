@@ -68,7 +68,7 @@
 }
 .lp-list-image-update-row {
   position: absolute;
-  margin-top: 70rpx;
+  margin-top: 71rpx;
   font-size: 0.8em;
   width: 180rpx;
   background: #ffd700;
