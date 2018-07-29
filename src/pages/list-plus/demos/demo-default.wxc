@@ -18,7 +18,7 @@ export default {
       playCount: 521,
       desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType: '1-6',
-      summary: '用音乐让宝贝动起来',
+      summary: '用音乐让宝贝动起来用音乐让宝贝动起来用音乐让宝贝动起来',
       oldPrice: 19.99,
       price: 0,
       new: false,

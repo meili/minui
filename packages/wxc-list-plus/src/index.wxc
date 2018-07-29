@@ -53,17 +53,18 @@
   height: 75rpx;
   margin-top: -64rpx;
   margin-left: -64rpx;
-  border-radius: 5px 0 0 0;
+  border-radius: 8px 0 0 0;
 }
 .lp-list-image-update {
   position: absolute;
-  margin-top: 85rpx;
+  margin-top: 82rpx;
   font-size: 0.8em;
   width: 200rpx;
   text-align: center;
   background: #ffd700;
   /* opacity: 0.9; */
   font-weight: bold;
+  border-radius:0 0 8rpx 8rpx;
 }
 .lp-list-image-update-row {
   position: absolute;
@@ -74,12 +75,13 @@
   text-align: center;
   /* opacity: 0.8; */
   font-weight: bold;
+  border-radius:0 0 8rpx 8rpx;
 }
 .lp-list-image {
   width: 200rpx;
   height: 200rpx;
   margin: 20rpx;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .lp-list-image-new-row {
   position: absolute;
@@ -87,11 +89,12 @@
   height: 75rpx;
   margin-top: -53rpx;
   margin-left: -53rpx;
+  border-radius: 8px 0 0 0;
 }
 .lp-list-image-row {
   width: 180rpx;
   height: 180rpx;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .lp-list-content {
   flex: 1;
@@ -100,10 +103,11 @@
   justify-content: center;
   align-items: center;
   margin-left: 10rpx;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
+  height:200rpx;
 }
 .lp-content-header {
-  flex: 1;
+  flex: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -118,7 +122,7 @@
   align-items: center;
 }
 .lp-content-type {
-  flex: 1;
+  flex: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -134,16 +138,16 @@
   flex-wrap: wrap;
 }
 .lp-content-desc {
-  flex: 1;
+  flex: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   margin-top: 10rpx;
 }
 .lp-content-year {
-  flex: 1;
+  flex: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -215,7 +219,7 @@
               <label class="lp-content-type-word-desc">{{game.summary}}</label>
             </view>
             <view class="lp-content-type">
-              <wxc-label class="lp-content-type-word" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
+              <wxc-label class="lp-content-type-word" type="plain"  wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}" text-color="{{tag.color}}">{{tag.name}}</wxc-label>
             </view>
             <view class="lp-content-price"  wx:if="{{!hiddenPrice}}">
               <wxc-price class="old-price" status="del" del-color="#666">{{game.oldPrice}}</wxc-price>
@@ -237,7 +241,7 @@
           <lable class="lp-content-title-word-row">{{game.title}}</lable>
         </view>
         <view class="lp-content-type-row">
-          <wxc-label class="lp-content-type-word-row" type="fill"  wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}">{{tag.name}}</wxc-label>
+          <wxc-label class="lp-content-type-word-row"  type="plain"   wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}" text-color="{{tag.color}}">{{tag.name}}</wxc-label>
         </view>
       </view>
     </view>
