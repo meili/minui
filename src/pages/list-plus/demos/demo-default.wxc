@@ -57,6 +57,10 @@ export default {
       {
         name: '艺术',
         color: '#EEDC82'
+      },
+      {
+        name: '认知',
+        color: '#EE6363'
       }
       ]
     },
