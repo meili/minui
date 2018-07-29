@@ -49,18 +49,19 @@
 .lp-list-image-new {
   position: absolute;
   width: 75rpx;
-  height: 69.5rpx;
-  margin-top: -100rpx;
-  margin-left: -100rpx;
+  height: 75rpx;
+  margin-top: -64rpx;
+  margin-left: -64rpx;
+  border-radius: 5px 0 0 0;
 }
 .lp-list-image-update {
   position: absolute;
-  margin-top: 80rpx;
+  margin-top: 85rpx;
   font-size: 0.8em;
   width: 200rpx;
-  background: white;
   text-align: center;
-  opacity: 0.8;
+  background: #ffd700;
+  /* opacity: 0.9; */
   font-weight: bold;
 }
 .lp-list-image-update-row {
@@ -68,26 +69,28 @@
   margin-top: 70rpx;
   font-size: 0.8em;
   width: 180rpx;
-  background: white;
+  background: #ffd700;
   text-align: center;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   font-weight: bold;
 }
 .lp-list-image {
   width: 200rpx;
   height: 200rpx;
-  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 5px;
 }
 .lp-list-image-new-row {
   position: absolute;
   width: 75rpx;
-  height: 69.5rpx;
-  margin-top: -80rpx;
-  margin-left: -80rpx;
+  height: 75rpx;
+  margin-top: -53rpx;
+  margin-left: -53rpx;
 }
 .lp-list-image-row {
   width: 180rpx;
   height: 180rpx;
+  border-radius: 5px;
 }
 .lp-list-content {
   flex: 1;
@@ -195,7 +198,7 @@
     <view  class="lp-container" wx:if="{{direction=='column'}}">
       <view class="lp-list-item"  wx:for="{{games}}" wx:for-item="game" wx:key="games" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img">
-          <image animation="{{animationData}}" class="lp-list-image-new" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new.png" ></image>
+          <image animation="{{animationData}}" class="lp-list-image-new" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new_icon.png" ></image>
           <image class="lp-list-image" mode="aspectFill" src="{{game.url}}" ></image>
           <lable  class="lp-list-image-update" wx:if="{{game.dataUpdate}}">更新啦!</lable>
         </view>
@@ -225,7 +228,7 @@
     <view  class="lp-container-row" wx:if="{{direction=='row'}}">
       <view class="lp-list-item-row"  wx:for="{{games}}" wx:for-item="game" wx:key="games" data-game="{{game}}" bindtap="onClick">
         <view class="lp-list-img-row">
-          <image animation="{{animation}}" class="lp-list-image-new-row" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new.png" ></image>
+          <image animation="{{animation}}" class="lp-list-image-new-row" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new_icon.png" ></image>
           <image class="lp-list-image-row" mode="aspectFill" src="{{game.url}}"></image>
           <lable  class="lp-list-image-update-row" wx:if="{{game.dataUpdate}}">更新啦!</lable>
         </view>

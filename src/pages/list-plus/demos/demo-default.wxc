@@ -1,5 +1,5 @@
 <template>
-  <wxc-list-plus games="{{games}}" animation="{{animationData}}" direction="row"  bindclick="onClick"></wxc-list-plus>
+  <wxc-list-plus games="{{games}}"  direction="row"  bindclick="onClick"></wxc-list-plus>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     games: [{
       id: 1,
       title: '魔法舞会',
-      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      url: 'https://childrensday.algforce.com/gamepower-test/game/1/bg.jpg',
       playCount: 521,
       desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType: '1-6',
@@ -41,7 +41,7 @@ export default {
     {
       id: 2,
       title: '魔法舞会',
-      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      url: 'https://childrensday.algforce.com/gamepower-test/game/2/bg.jpg',
       playCount: 521,
       desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType: '1-6',
@@ -63,7 +63,7 @@ export default {
     {
       id: 3,
       title: '魔法舞会',
-      url: 'http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg',
+      url: 'https://childrensday.algforce.com/gamepower-test/game/3/bg.jpg',
       playCount: 521,
       desc: '音乐响起宝贝和奶奶可以随着音乐自由舞蹈，音乐一旦停止，所有人必须暂停舞蹈并保持静止',
       childrenType: '1-6',
