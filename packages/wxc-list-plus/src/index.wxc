@@ -210,7 +210,7 @@
         <view class="lp-list-content">
             <view class="lp-content-header">
               <lable class="lp-content-title-word">{{game.title}}</lable>
-              <lable class="lp-content-count-word">{{game.playCount}}个宝贝玩过</lable>
+              <lable class="lp-content-count-word">被打卡{{game.playCount}}次</lable>
             </view>
             <view class="lp-content-year">
               <wxc-label class="lp-content-type-word" type="plain" type-color="#87CEFA" text-color="#87CEFA">{{game.childrenType}}岁+</wxc-label>
