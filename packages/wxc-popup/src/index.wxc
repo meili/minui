@@ -1,5 +1,10 @@
 <template>
-  <wxc-mask status="{{maskStatus}}" locked="{{locked}}"></wxc-mask>
+  <wxc-mask
+    status="{{maskStatus}}"
+    locked="{{locked}}"
+    opacity="{{maskOptions.opacity || 0.6}}"
+    backgroundColor="{{maskOptions.backgroundColor || '#000000'}}"
+  ></wxc-mask>
   <view style="z-index: {{zIndex}};" class="popup popup__status--{{status}} popup__content-align--{{align}} popup__status--{{status}}--animotion-{{animationMode}}" bindtap="popupTap">
     <slot></slot>
   </view>
@@ -14,6 +19,10 @@ export default {
   },
   behaviors: [],
   properties: {
+    maskOptions: {
+      type: Object,
+      value: {}
+    },
     locked: {
       type: String,
       value: "hide"
@@ -104,6 +113,8 @@ export default {
     popupTap() {
       if (this.data.locked !== 'true') {
         this.hide();
+
+        this.triggerEvent('popuptap', {}, {});
       }
     },
     hide() {
