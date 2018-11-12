@@ -1,0 +1,54 @@
+<template>
+  <button bindtap="showPopup">居中，有动画</button>
+
+  <wxc-popup
+    class="J_Popup"
+    animation-mode="center"
+    align="center"
+    onpopuptap="popupTap"
+    mask-options="{{maskOptions}}"
+  >
+    <view class="popup__content">Hello World</view>
+  </wxc-popup>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-popup': '@minui/wxc-popup'
+    }
+  },
+  data: {
+    maskOptions: {
+      opacity: '0.1',
+      backgroundColor: '#ff6600'
+    }
+  },
+  /** note: 在 wxp 文件或者页面文件中请去掉 methods 包装 */
+  methods: {
+    popupTap () {
+      debugger
+    },
+    showPopup () {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.show();
+    },
+    hidePopup () {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.hide();
+    }
+  }
+}
+</script>
+
+<style>
+  .popup__content {
+    width: 300rpx;
+    height: 300rpx;
+    line-height: 300rpx;
+    background: #FFFFFF;
+    border-radius: 12rpx;
+    text-align: center;
+  }
+</style>

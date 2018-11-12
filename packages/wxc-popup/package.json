@@ -1,6 +1,6 @@
 {
   "name": "@minui/wxc-popup",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "MinUI 小程序组件 - 弹出层",
   "main": "dist/index.js",
   "repository": {

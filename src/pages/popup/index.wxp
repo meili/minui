@@ -25,6 +25,10 @@
       <demo-right></demo-right>
     </example-demo>
 
+     <example-demo title="mask 配置" desc="支持透明度，背景色配置">
+      <demo-custom-mask></demo-custom-mask>
+    </example-demo>
+
   </example>
 </template>
 
@@ -40,7 +44,8 @@ export default {
       'demo-top': './demos/demo-top',
       'demo-bottom': './demos/demo-bottom',
       'demo-left': './demos/demo-left',
-      'demo-right': './demos/demo-right'
+      'demo-right': './demos/demo-right',
+      'demo-custom-mask': './demos/demo-custom-mask'
     }
   },
   data: {},
