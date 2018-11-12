@@ -1,5 +1,5 @@
 <template>
-  <view class="countdown">
+  <view class="countdown" style="{{comStyle}}">
     <view class="countdown__item" wx:for="{{timeItems}}" wx:key="" >
         <view class="countdown__item--num" style="{{numStyle}}">{{item.num}}</view>
         <view class="countdown__item--symbol" style="{{symbolStyle}}">{{item.symbol}}</view>
@@ -22,6 +22,10 @@ export default {
     format: {
       type: String,
       value: 'dd天hh时mm分ss秒'
+    },
+    comStyle: {
+      type: String,
+      value: ''
     },
     numStyle: {
       type: String,
