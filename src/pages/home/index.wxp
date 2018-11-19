@@ -18,6 +18,9 @@
                   mode="{{i == item.pages.length-1 ? 'none': ''}}"
                   bindtap="navigate"></wxc-list>
       </view>
+      <view class="menu__body">
+      
+      </view>
     </view>
 
     <view class="index-ft">

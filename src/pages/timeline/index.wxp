@@ -1,0 +1,34 @@
+<template>
+  <example title="timeline" desc="时间线">
+
+    <example-demo title="timeline示例" desc="设置时间线">
+      <demo-default></demo-default>
+    </example-demo>
+
+  </example>
+</template>
+
+<script>
+
+export default {
+  config: {
+    usingComponents: {
+      'example': '@minui/wxc-example',
+      'example-demo': '@minui/wxc-example-demo',
+      'example-md': '@minui/wxc-example-md',
+      'demo-default': './demos/demo-default'
+    }
+  },
+  data: {},
+  onShareAppMessage: function () {
+    return {
+      title: '时间线 - MinUI小程序组件库',
+      path: '/pages/timeline/index'
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

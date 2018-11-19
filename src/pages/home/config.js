@@ -121,6 +121,12 @@ module.exports = {
           "code": ""
         },
         {
+          "id": "input-plus",
+          "name": "输入框增强",
+          "icon": "",
+          "code": ""
+        },
+        {
           "id": "list",
           "name": "列表",
           "icon": "",

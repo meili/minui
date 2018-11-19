@@ -1,0 +1,293 @@
+<style>
+.lp-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.lp-container-row {
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  height: 360rpx;
+  justify-content: center;
+  align-items: center;
+}
+.lp-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 20rpx;
+  background: white;
+  margin: 10rpx;
+  padding: 10rpx;
+}
+.lp-list-item-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  background: white;
+  margin: 5rpx;
+  padding: 5rpx;
+  height: 300rpx;
+}
+.lp-list-img {
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.lp-list-img-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top:13rpx;
+}
+.lp-list-image-new {
+  position: absolute;
+  width: 75rpx;
+  height: 75rpx;
+  margin-top: -64rpx;
+  margin-left: -64rpx;
+  border-radius: 8px 0 0 0;
+}
+.lp-list-image-update {
+  position: absolute;
+  margin-top: 82rpx;
+  font-size: 0.8em;
+  width: 200rpx;
+  text-align: center;
+  background: #ffd700;
+  /* opacity: 0.9; */
+  font-weight: bold;
+  border-radius:0 0 8rpx 8rpx;
+}
+.lp-list-image-update-row {
+  position: absolute;
+  margin-top: 71rpx;
+  font-size: 0.8em;
+  width: 180rpx;
+  background: #ffd700;
+  text-align: center;
+  /* opacity: 0.8; */
+  font-weight: bold;
+  border-radius:0 0 8rpx 8rpx;
+}
+.lp-list-image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 8px;
+}
+.lp-list-image-new-row {
+  position: absolute;
+  width: 75rpx;
+  height: 75rpx;
+  margin-top: -53rpx;
+  margin-left: -53rpx;
+  border-radius: 8px 0 0 0;
+}
+.lp-list-image-row {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8px;
+}
+.lp-list-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  height:200rpx;
+}
+.lp-content-header {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.lp-content-header-row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.lp-content-type {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+}
+.lp-content-type-row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lp-content-desc {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 10rpx;
+}
+.lp-content-year {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.lp-content-price {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+.lp-content-title-word {
+  font-size: 1em;
+}
+.lp-content-title-word-row {
+  font-size: 1em;
+}
+.lp-content-count-word {
+  font-size: 0.7em;
+}
+.lp-content-type-word {
+  font-size: 1em;
+  margin-right: 20rpx;
+}
+.lp-content-type-word-desc {
+  font-size: 0.7em;
+  margin-right: 20rpx;
+}
+.lp-content-type-word-row {
+  font-size: 0.8em;
+  margin: 5rpx;
+}
+.lp-content-desc-word {
+  font-size: 0.8em;
+}
+.old-price {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.price {
+  margin-left: 10rpx;
+  font-size: 36rpx;
+  /* font-weight: bold; */
+  color: #ff4422;
+}
+</style>
+
+<template>
+  <view>
+    <view  class="lp-container" wx:if="{{direction=='column'}}">
+      <view class="lp-list-item"  wx:for="{{games}}" wx:for-item="game" wx:key="games" data-game="{{game}}" bindtap="onClick">
+        <view class="lp-list-img">
+          <image animation="{{animationData}}" class="lp-list-image-new" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new_icon.png" ></image>
+          <image class="lp-list-image" mode="aspectFill" src="{{game.url}}" ></image>
+          <lable  class="lp-list-image-update" wx:if="{{game.dataUpdate}}">更新啦!</lable>
+        </view>
+        <view class="lp-list-content">
+            <view class="lp-content-header">
+              <lable class="lp-content-title-word">{{game.title}}</lable>
+              <lable class="lp-content-count-word">被打卡{{game.playCount}}次</lable>
+            </view>
+            <view class="lp-content-year">
+              <wxc-label class="lp-content-type-word" type="plain" type-color="#87CEFA" text-color="#87CEFA">{{game.childrenType}}岁+</wxc-label>
+            </view>
+            <view class="lp-content-desc">
+              <label class="lp-content-type-word-desc">{{game.summary}}</label>
+            </view>
+            <view class="lp-content-type">
+              <wxc-label class="lp-content-type-word" type="plain"  wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}" text-color="{{tag.color}}">{{tag.name}}</wxc-label>
+            </view>
+            <view class="lp-content-price"  wx:if="{{!hiddenPrice}}">
+              <wxc-price class="old-price" status="del" del-color="#666">{{game.oldPrice}}</wxc-price>
+              <wxc-price class="price" wx:if="{{game.price>0}}" value="{{game.price}}" decimal="small"></wxc-price>
+              <lable class="price" wx:else>限免</lable>
+            </view>
+        </view>
+      </view>
+    </view>
+    
+    <view  class="lp-container-row" wx:if="{{direction=='row'}}">
+      <view class="lp-list-item-row"  wx:for="{{games}}" wx:for-item="game" wx:key="games" data-game="{{game}}" bindtap="onClick">
+        <view class="lp-list-img-row">
+          <image animation="{{animation}}" class="lp-list-image-new-row" wx:if="{{game.new}}" src="https://childrensday.algforce.com/gamepower/new_icon.png" ></image>
+          <image class="lp-list-image-row" mode="aspectFill" src="{{game.url}}"></image>
+          <lable  class="lp-list-image-update-row" wx:if="{{game.dataUpdate}}">更新啦!</lable>
+        </view>
+        <view class="lp-content-header-row">
+          <lable class="lp-content-title-word-row">{{game.title}}</lable>
+        </view>
+        <view class="lp-content-type-row">
+          <wxc-label class="lp-content-type-word-row"  type="plain"   wx:for="{{game.tags}}" wx:for-item="tag" wx:key="tags" type-color="{{tag.color}}" text-color="{{tag.color}}">{{tag.name}}</wxc-label>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-label': '@minui/wxc-label',
+      'wxc-elip': '@minui/wxc-elip',
+      'wxc-price': '@minui/wxc-price'
+    }
+  },
+  behaviors: [],
+  properties: {
+    hiddenPrice: {
+      type: Boolean,
+      value: true
+    },
+    direction: {
+      type: String,
+      value: 'column'
+    },
+    games: {
+      type: Array,
+      value: []
+    },
+    animation: {
+      type: Object,
+      value: {}
+    }
+  },
+  data: {
+  },
+  methods: {
+    onClick(event) {
+      let detail = event.currentTarget.dataset.game;
+      let option = {};
+      this.triggerEvent('click', detail, option);
+      console.info('123')
+    }
+  }
+}
+
+
+</script>
+

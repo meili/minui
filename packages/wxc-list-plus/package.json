@@ -1,0 +1,16 @@
+{
+  "name": "wxc-list-plus",
+  "version": "1.0.22",
+  "description": "增强列表 - 小程序组件",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenofzhen/minui/tree/master/packages/wxc-list-plus"
+  },
+  "author": "",
+  "license": "MIT",
+  "minConfig": {
+    "component": true
+  }
+}

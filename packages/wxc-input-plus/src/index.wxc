@@ -1,0 +1,231 @@
+<template>
+  <view class="input">
+    <view class="input__combine input__{{mode}} {{error? 'input__error': ''}}">
+        <view class="input__label" wx:if="{{title}}">{{title}}</view>
+
+        <image wx:if="{{!title && src}}" class="input__icon" mode="aspectFit" src="{{src}}"></image>
+
+        <wxc-icon wx:if="{{!title && !src && icon}}" class="input__icon" type="{{icon}}" color="{{iconColor || '#999'}}" size="38" _pid="{{_pid}}"></wxc-icon>
+
+        <input wx:if="{{type!=='date' && type!=='time' && type!=='region'}}" class="input__form {{right? 'input__right' : ''}}" value="{{value}}" type="{{type}}" password="{{password}}" placeholder="{{placeholder}}" placeholder-style="{{placeholderStyle}}" placeholder-class="input__placeholder" disabled="{{disabled}}" maxlength="{{maxlength}}" cursor-spacing="{{cursorSpacing}}" focus="{{focus}}" confirm-type="{{confirmType}}" confirm-hold="{{confirmHold}}" cursor="{{cursor}}" selection-start="{{selectionStart}}" selection-end="{{selectionEnd}}" adjust-position="{{adjustPosition}}" bindinput="onInput" bindfocus="onFocus" bindblur="onBlur" bindconfirm="onConfirm"></input>
+        <picker wx:else mode="{{type}}"  value="{{value}}" bindchange="onTimeDateRegionChange"  start="{{start}}" end="{{end}}">
+          <input class="input__form {{right? 'input__right' : ''}}" value="{{value}}" type="text" placeholder="{{placeholder}}" placeholder-style="{{placeholderStyle}}" placeholder-class="input__placeholder" disabled="{{disabled}}" ursor-spacing="{{cursorSpacing}}" focus="{{focus}}" confirm-type="{{confirmType}}" confirm-hold="{{confirmHold}}" cursor="{{cursor}}" selection-start="{{selectionStart}}" selection-end="{{selectionEnd}}" adjust-position="{{adjustPosition}}" bindinput="onInput" bindfocus="onFocus" bindblur="onBlur" bindconfirm="onConfirm"></input>
+        </picker>
+    </view>
+</view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-icon': '@minui/wxc-icon'
+    }
+  },
+  behaviors: [],
+  properties: {
+    title: {
+      type: String,
+      value: ''
+    },
+    src: {
+      type: String,
+      value: ''
+    },
+    icon: {
+      type: String,
+      value: ''
+    },
+    iconColor: {
+      type: String,
+      value: ''
+    },
+    mode: {
+      type: String,
+      value: 'normal' // 输入框的模式选择，可选值：wrapped，有边框包裹, normal，只有下边框，none，无边框
+    },
+    right: {
+      type: Boolean,
+      value: false // 输入框是否居右显示
+    },
+    error: {
+      type: Boolean,
+      value: false
+    },
+    value: {
+      type: String,
+      value: ''
+    },
+    type: {
+      type: String,
+      value: 'text'
+    },
+    password: {
+      type: Boolean,
+      value: false
+    },
+    placeholder: {
+      type: String,
+      value: ''
+    },
+    placeholderStyle: {
+      type: String,
+      value: ''
+    },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    maxlength: {
+      type: [Number, String],
+      value: 140
+    },
+    cursorSpacing: {
+      type: [Number, String],
+      value: 0
+    },
+    focus: {
+      type: Boolean,
+      value: false
+    },
+    confirmType: {
+      type: String,
+      value: 'done'
+    },
+    confirmHold: {
+      type: Boolean,
+      value: false
+    },
+    cursor: {
+      type: [Number, String],
+      value: 0
+    },
+    selectionStart: {
+      type: [Number, String],
+      value: -1
+    },
+    selectionEnd: {
+      type: [Number, String],
+      value: -1
+    },
+    adjustPosition: {
+      type: Boolean,
+      value: true
+    },
+    start: {
+      type: String,
+      value: ''
+    },
+    end: {
+      type: String,
+      value: ''
+    }
+  },
+  data: {},
+  methods: {
+    onInput: function onInput(event) {
+      var detail = event.detail;
+      var option = {};
+      this.triggerEvent('input', detail, option);
+    },
+    onFocus: function onFocus(event) {
+      var detail = event.detail;
+      var option = {};
+      this.triggerEvent('focus', detail, option);
+    },
+    onBlur: function onBlur(event) {
+      var detail = event.detail;
+      var option = {};
+      this.triggerEvent('blur', detail, option);
+    },
+    onConfirm: function onConfirm(event) {
+      var detail = event.detail;
+      var option = {};
+      this.triggerEvent('confirm', detail, option);
+    },
+    onTimeDateRegionChange: function onTimeDateRegionChange(event) {
+      let val = event.detail.value
+      if (this.data.type === 'region') {
+        val = val[0] + val[1] + val[2]
+      }
+      this.setData({
+        value: val
+      })
+      var detail = event.detail;
+      var option = {};
+      this.triggerEvent('confirm', detail, option);
+    }
+  }
+}
+
+
+</script>
+
+<style>
+.input__combine {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  line-height: 1.4;
+  padding: 24rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.input__combine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+  border-bottom-width: 1rpx;
+}
+.input__wrapped:after {
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+}
+.input__none::after {
+  display: none;
+}
+.input__right {
+  text-align: right;
+}
+.input__error {
+  color: #fc3c64;
+}
+.input__error:after {
+  border-color: #fc3c64;
+}
+.input__label {
+  min-width: 163rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  color: #333;
+}
+.input__icon {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  margin-right: 32rpx;
+  color: #999;
+}
+.input__form {
+  flex: 1;
+  height: 46rpx;
+  min-height: 46rpx;
+  line-height: 46rpx;
+  font-size: 32rpx;
+}
+.input__placeholder {
+  font-size: 28rpx;
+  color: #999;
+}
+</style>

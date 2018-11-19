@@ -1,0 +1,26 @@
+<template>
+  <view class="container">
+    <wxc-input-plus type="region" title="地区选择" placeholder="输入地区"></wxc-input-plus>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      'wxc-input-plus': 'wxc-input-plus'
+    }
+  },
+  data: {},
+  methods: {}
+}
+</script>
+
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>
