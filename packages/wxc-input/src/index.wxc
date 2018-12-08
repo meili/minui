@@ -41,7 +41,7 @@ export default {
       'wxc-icon': '@minui/wxc-icon'
     }
   },
-  behaviors: [],
+  behaviors: ['wx://form-field'],
   properties: {
     title: {
       type: String,
@@ -130,13 +130,18 @@ export default {
     adjustPosition: {
       type: Boolean,
       value: true
-    }
+    },
+    name: {
+      type: String,
+      value: ''
+    },
   },
   data: { },
   methods: {
     onInput(event) {
       let detail = event.detail;
       let option = {};
+      this.setData({ value: detail.value })
       this.triggerEvent('input', detail, option);
     },
     onFocus(event) {
